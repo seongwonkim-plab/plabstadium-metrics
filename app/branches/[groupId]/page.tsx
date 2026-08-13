@@ -27,7 +27,13 @@ function branchTotal(sheet: MonthlyBranchSummary, db: DbRevenue, includeDep: boo
   const revenue = db.socialRevenue + db.rentalRevenue + sheetOtherRevenue(sheet)
   const baseExpense = sheetFixedExpense(sheet)
   const depreciation = sheet.depreciation
-  const managerCost = db.managerCost
+  // 매니저비 우선순위: DB 실지급(2024-01~) > 시트 입력값(과거) > 기본가 추정
+  const managerCost =
+    db.managerCostActual > 0
+      ? db.managerCostActual
+      : sheet.expenseManager > 0
+        ? sheet.expenseManager
+        : db.managerCostEstimate
   const expenseWithMgr = baseExpense + managerCost + (includeDep ? depreciation : 0)
   const profit = revenue - expenseWithMgr
   return {

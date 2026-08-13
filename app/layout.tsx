@@ -29,6 +29,9 @@ export default function RootLayout({
               <Link href="/" className="block rounded-md px-3 py-2 hover:bg-neutral-100">월간 대시보드</Link>
               <Link href="/weekly" className="block rounded-md px-3 py-2 hover:bg-neutral-100">주간 대시보드</Link>
               <Link href="/branches" className="block rounded-md px-3 py-2 hover:bg-neutral-100">지점 상세</Link>
+              <div className="mt-4 mb-1 px-3 pt-2 border-t border-neutral-100 text-[10px] uppercase tracking-wide text-neutral-400">문서</div>
+              <Link href="/docs/readme" className="block rounded-md px-3 py-2 hover:bg-neutral-100">README</Link>
+              <Link href="/docs/task-history" className="block rounded-md px-3 py-2 hover:bg-neutral-100">작업 이력</Link>
             </nav>
           </aside>
           <main className="flex-1 px-8 py-6">{children}</main>

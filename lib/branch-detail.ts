@@ -79,8 +79,9 @@ export async function matchStatsByStadium(
         `SELECT m.stadium_id,
                 COALESCE(SUM(
                   CASE
-                    WHEN ch.cash_type = 'SOCIAL' AND ch.action = 'USE' THEN -ch.cash
-                    WHEN ch.cash_type = 'REFUND_CASH' AND ch.action = 'CANCEL' THEN -ch.cash
+                    WHEN ch.cash_type = 'SOCIAL' THEN -ch.cash
+                    WHEN ch.cash_type = 'REFUND_CASH'
+                         AND (ch.action IS NULL OR ch.action = 'CANCEL') THEN -ch.cash
                     ELSE 0
                   END
                 ), 0) AS net_cash

@@ -14,6 +14,8 @@ import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/
 import { YearSelector } from "./components/YearSelector"
 import { MonthNumSelector } from "./components/MonthNumSelector"
 import { DepreciationToggle } from "./components/DepreciationToggle"
+import { ProgressHeatmap } from "./components/ProgressHeatmap"
+import { progressHeatmap } from "@/lib/heatmap"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -32,7 +34,13 @@ function branchTotal(
   const revenue = db.socialRevenue + db.rentalRevenue + sheetOtherRevenue(sheet)
   const baseExpense = sheetFixedExpense(sheet)
   const depreciation = sheet.depreciation
-  const managerCost = db.managerCost
+  // 매니저비 우선순위: DB 실지급(2024-01~) > 시트 입력값(과거) > 기본가 추정
+  const managerCost =
+    db.managerCostActual > 0
+      ? db.managerCostActual
+      : sheet.expenseManager > 0
+        ? sheet.expenseManager
+        : db.managerCostEstimate
   const expense = baseExpense + (includeDep ? depreciation : 0)
   const profit = revenue - managerCost - expense
   return { revenue, expense, depreciation, managerCost, profit }
@@ -103,10 +111,11 @@ export default async function MonthlyDashboardPage({
   const includeDep = sp.dep !== "0"
   const prev = previousMonth(year, month)
 
-  const [cur, prv, trend] = await Promise.all([
+  const [cur, prv, trend, heatmap] = await Promise.all([
     loadMonthMaps(year, month),
     loadMonthMaps(prev.year, prev.month),
     loadTwelveMonthTrend(year, month, includeDep),
+    progressHeatmap(year, month),
   ])
 
   const rows: {
@@ -264,6 +273,13 @@ export default async function MonthlyDashboardPage({
         <div className="mb-2 text-xs text-neutral-500">12개월 매출·지출 추이 + 진행률 (전체 합계)</div>
         <TrendChart data={trend} />
       </section>
+
+      <section>
+        <div className="mb-2 text-xs text-neutral-500">
+          요일 × 시간대 진행률 히트맵 ({year}년 {month}월 · 영업 지점 합계)
+        </div>
+        <ProgressHeatmap cells={heatmap} />
+      </section>
     </div>
   )
 }
@@ -331,7 +347,7 @@ function TrendChart({ data }: { data: TrendPoint[] }) {
                   fill={isLast ? "#1d4ed8" : "#60a5fa"}
                   rx={2}
                 >
-                  <title>매출 {won(m.revenue)}</title>
+                  <title>{`매출 ${won(m.revenue)}`}</title>
                 </rect>
                 <rect
                   x={cx - barGroupW / 2 + barW + barGap}
@@ -341,7 +357,7 @@ function TrendChart({ data }: { data: TrendPoint[] }) {
                   fill={isLast ? "#4b5563" : "#9ca3af"}
                   rx={2}
                 >
-                  <title>지출 {won(m.expense)}</title>
+                  <title>{`지출 ${won(m.expense)}`}</title>
                 </rect>
                 <text
                   x={cx}
@@ -368,7 +384,7 @@ function TrendChart({ data }: { data: TrendPoint[] }) {
           {points.map((p) => (
             <g key={`dot-${p.i}`}>
               <circle cx={p.x} cy={p.y} r={4} fill="#f59e0b">
-                <title>진행률 {pct(p.rate)}</title>
+                <title>{`진행률 ${pct(p.rate)}`}</title>
               </circle>
               <text
                 x={p.x}
