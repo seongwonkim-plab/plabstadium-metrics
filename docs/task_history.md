@@ -4,6 +4,11 @@
 
 ## 2026-08-13
 
+- **지점 상세 페이지 확장**
+  - 6개월 단순 막대 → **12개월 매출·지출 + 진행률 라인** 결합 차트 (월간 대시보드와 동일 스타일)
+  - `TrendChart` 컴포넌트를 `app/components/TrendChart.tsx` 로 추출해 월간·지점 공용
+  - 하단에 **구장별 요일 × 시간대 진행률 히트맵** 신설 (지점 내 각 구장별로 개별 히트맵 나열)
+  - `lib/heatmap.ts` 에 `progressHeatmapByStadium(groupId, year, month)` 함수 추가
 - **사이드바 하단 시스템 상태 표시기**
   - 초록 = API 정상 · 빨강 = API 오류 · 회색 = 확인 중
   - 30초마다 `/api/health` 폴링, Plab 게이트웨이에 `SELECT 1` 실시간 확인

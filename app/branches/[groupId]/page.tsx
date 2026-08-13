@@ -16,6 +16,9 @@ import { BranchSwitcher } from "./BranchSwitcher"
 import { DepreciationToggle } from "@/app/components/DepreciationToggle"
 import { YearSelector } from "@/app/components/YearSelector"
 import { MonthNumSelector } from "@/app/components/MonthNumSelector"
+import { TrendChart, type TrendPoint } from "@/app/components/TrendChart"
+import { ProgressHeatmap } from "@/app/components/ProgressHeatmap"
+import { progressHeatmapByStadium } from "@/lib/heatmap"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -46,21 +49,23 @@ function branchTotal(sheet: MonthlyBranchSummary, db: DbRevenue, includeDep: boo
   }
 }
 
-async function loadBranchMonthTotal(
+async function loadBranchMonthTrend(
   groupId: number,
   year: number,
   month: number,
   includeDep: boolean,
-): Promise<{ revenue: number; expense: number } | null> {
-  const [list, dbRev] = await Promise.all([
+): Promise<Omit<TrendPoint, "year" | "month">> {
+  const [list, dbRev, matches] = await Promise.all([
     monthlyByBranch(year, month),
     dbRevenueByBranch(year, month),
+    matchStatsByBranch(year, month),
   ])
   const sheet = list.find((x) => x.branch.groupId === groupId)
   const db = dbRev.get(groupId)
-  if (!sheet || !db) return null
+  if (!sheet || !db) return { revenue: 0, expense: 0, progressRate: null }
   const t = branchTotal(sheet, db, includeDep)
-  return { revenue: t.revenue, expense: t.expenseWithMgr }
+  const rate = matches.get(groupId)?.progressRate ?? null
+  return { revenue: t.revenue, expense: t.expenseWithMgr, progressRate: rate }
 }
 
 export default async function BranchDetailPage({
@@ -81,18 +86,19 @@ export default async function BranchDetailPage({
   const year = sp.y ? Number(sp.y) : defaultMonth.year
   const month = sp.m ? Number(sp.m) : defaultMonth.month
 
-  const [info, ledgerList, matches, dbRev, stadiumStats, sixMonths] = await Promise.all([
+  const [info, ledgerList, matches, dbRev, stadiumStats, trend, stadiumHeatmaps] = await Promise.all([
     loadBranchInfo(groupId),
     monthlyByBranch(year, month),
     matchStatsByBranch(year, month),
     dbRevenueByBranch(year, month),
     matchStatsByStadium(groupId, year, month),
     Promise.all(
-      monthsBack(year, month, 6).map(async (m) => {
-        const t = await loadBranchMonthTotal(groupId, m.year, m.month, includeDep)
-        return { ...m, revenue: t?.revenue ?? 0, expense: t?.expense ?? 0 }
+      monthsBack(year, month, 12).map(async (m): Promise<TrendPoint> => {
+        const t = await loadBranchMonthTrend(groupId, m.year, m.month, includeDep)
+        return { ...m, ...t }
       }),
     ),
+    progressHeatmapByStadium(groupId, year, month),
   ])
 
   const summary: MonthlyBranchSummary =
@@ -109,8 +115,6 @@ export default async function BranchDetailPage({
         month: "long",
       })
     : "—"
-
-  const chartMax = Math.max(1, ...sixMonths.flatMap((m) => [m.revenue, m.expense]))
 
   const activeBranches = BRANCHES.filter((b) => b.status !== "closed").map((b) => ({
     groupId: b.groupId,
@@ -165,41 +169,10 @@ export default async function BranchDetailPage({
       </section>
 
       <section>
-        <div className="mb-2 text-xs text-neutral-500">6개월 매출·지출 추이</div>
-        <div className="rounded-lg border border-neutral-200 p-4">
-          <div className="flex items-end gap-3" style={{ height: "140px" }}>
-            {sixMonths.map((m, i) => {
-              const isLast = i === sixMonths.length - 1
-              return (
-                <div key={`${m.year}-${m.month}`} className="flex flex-1 flex-col items-center gap-1.5">
-                  <div className="flex w-full items-end gap-1" style={{ height: "110px" }}>
-                    <div
-                      className={isLast ? "flex-1 rounded-t bg-blue-700" : "flex-1 rounded-t bg-blue-400"}
-                      style={{ height: `${(m.revenue / chartMax) * 100}%` }}
-                      title={won(m.revenue)}
-                    />
-                    <div
-                      className={isLast ? "flex-1 rounded-t bg-neutral-600" : "flex-1 rounded-t bg-neutral-400"}
-                      style={{ height: `${(m.expense / chartMax) * 100}%` }}
-                      title={won(m.expense)}
-                    />
-                  </div>
-                  <span className={`text-[10px] ${isLast ? "font-medium text-neutral-900" : "text-neutral-500"}`}>
-                    {m.month}월
-                  </span>
-                </div>
-              )
-            })}
-          </div>
-          <div className="mt-3 flex gap-4 text-[10px] text-neutral-500">
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-2 w-2 rounded bg-blue-400" /> 매출
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-2 w-2 rounded bg-neutral-400" /> 지출{includeDep ? " (감가 포함)" : ""}
-            </span>
-          </div>
+        <div className="mb-2 text-xs text-neutral-500">
+          12개월 매출·지출 추이 + 진행률 ({branch.displayName})
         </div>
+        <TrendChart data={trend} />
       </section>
 
       <section>
@@ -322,6 +295,28 @@ export default async function BranchDetailPage({
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <div className="mb-2 text-xs text-neutral-500">
+          구장별 요일 × 시간대 진행률 히트맵 ({year}년 {month}월)
+        </div>
+        {stadiumHeatmaps.length === 0 ? (
+          <div className="rounded-lg border border-neutral-200 p-6 text-center text-xs text-neutral-400">
+            이번 달 매치 데이터 없음
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {stadiumHeatmaps.map((sh) => (
+              <div key={sh.stadiumId}>
+                <div className="mb-1 text-[11px] font-medium text-neutral-700">
+                  {branch.displayName} {sh.name}
+                </div>
+                <ProgressHeatmap cells={sh.cells} />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   )
