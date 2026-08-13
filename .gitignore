@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# secrets - never commit service account keys
+.secrets/
+
+# claude code local permission cache (contains API keys)
+.claude/settings.local.json
+
 # vercel
 .vercel
 
