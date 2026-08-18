@@ -301,18 +301,15 @@ export default async function BranchDetailPage({
               muted
             />
           )}
+          {includeDep && summary.depreciation > 0 && (
+            <Row label="감가상각" value={won(summary.depreciation)} />
+          )}
           <Row
             label={`총 지출 ${includeDep ? "(감가 포함)" : "(감가 제외)"}`}
             value={won(t.expenseWithMgr)}
             bold
             divider
           />
-
-          {!includeDep && (
-            <div className="mt-3">
-              <Row label="감가상각 (참고)" value={won(summary.depreciation)} muted />
-            </div>
-          )}
 
           <div className="mt-3 border-t border-neutral-300 pt-3">
             <div className="flex justify-between text-base font-semibold">
