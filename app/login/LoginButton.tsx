@@ -1,15 +1,42 @@
 "use client"
 
-import { signIn } from "next-auth/react"
 import { useState } from "react"
 
+// next-auth/react 의 signIn 은 fetch 로 처리하면서 CSRF 쿠키·리다이렉트 처리에
+// 버그가 있어서 (v5 beta 이슈) 브라우저 네이티브 form submit 으로 우회.
 export function LoginButton({ callbackUrl }: { callbackUrl: string }) {
   const [loading, setLoading] = useState(false)
 
   async function handleClick() {
     setLoading(true)
-    // 클라이언트 사이드 signIn: next-auth/react 가 CSRF 처리 + Google 로 window.location 이동
-    await signIn("google", { callbackUrl })
+    try {
+      // 1) CSRF 토큰 조회 (쿠키도 함께 설정됨)
+      const csrfRes = await fetch("/api/auth/csrf", { credentials: "include" })
+      const { csrfToken } = (await csrfRes.json()) as { csrfToken: string }
+
+      // 2) 네이티브 form POST → 브라우저가 302 리다이렉트를 Google 로 따라감
+      const form = document.createElement("form")
+      form.method = "POST"
+      form.action = "/api/auth/signin/google"
+
+      const csrfInput = document.createElement("input")
+      csrfInput.type = "hidden"
+      csrfInput.name = "csrfToken"
+      csrfInput.value = csrfToken
+      form.appendChild(csrfInput)
+
+      const cbInput = document.createElement("input")
+      cbInput.type = "hidden"
+      cbInput.name = "callbackUrl"
+      cbInput.value = callbackUrl
+      form.appendChild(cbInput)
+
+      document.body.appendChild(form)
+      form.submit()
+    } catch (e) {
+      console.error("signIn 실패:", e)
+      setLoading(false)
+    }
   }
 
   return (
