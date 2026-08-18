@@ -1,7 +1,23 @@
 import Link from "next/link"
 import { StatusIndicator } from "./StatusIndicator"
+import { auth, signOut } from "@/auth"
+import { headers } from "next/headers"
 
-export function AppShell({ children }: { children: React.ReactNode }) {
+export async function AppShell({ children }: { children: React.ReactNode }) {
+  // /login 은 사이드바 없는 단독 화면 (proxy.ts 가 x-pathname 헤더 심음)
+  const h = await headers()
+  const pathname = h.get("x-pathname") ?? ""
+  if (pathname === "/login") {
+    return <>{children}</>
+  }
+
+  const session = await auth()
+
+  async function handleSignOut() {
+    "use server"
+    await signOut({ redirectTo: "/login" })
+  }
+
   return (
     <div className="flex min-h-screen">
       <aside className="w-56 shrink-0 flex flex-col border-r border-neutral-200">
@@ -57,6 +73,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             시스템 상태
           </div>
           <StatusIndicator />
+
+          {session?.user && (
+            <div className="mt-3 border-t border-neutral-100 pt-3">
+              <div className="px-2 text-[11px] text-neutral-700 truncate" title={session.user.email ?? undefined}>
+                {session.user.name || session.user.email}
+              </div>
+              <div className="mt-0.5 px-2 text-[10px] text-neutral-400 truncate">
+                {session.user.email}
+              </div>
+              <form action={handleSignOut}>
+                <button
+                  type="submit"
+                  className="mt-2 w-full rounded-md px-2 py-1.5 text-left text-xs text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800"
+                >
+                  로그아웃
+                </button>
+              </form>
+            </div>
+          )}
         </div>
       </aside>
       <main className="flex-1 px-8 py-6">{children}</main>

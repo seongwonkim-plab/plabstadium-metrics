@@ -4,6 +4,13 @@
 
 ## 2026-08-18
 
+- **Google Workspace 도메인 로그인 (Auth.js v5)**
+  - `@plabfootball.com` 계정만 접근 가능 · 그 외는 AccessDenied
+  - `auth.ts`: NextAuth v5 + Google provider · signIn 콜백에서 도메인 재검증
+  - `proxy.ts`: 세션 미들웨어 + Bearer CRON_SECRET 병행 지원
+  - `/login`: Google 로 로그인 버튼 (서버 액션)
+  - 사이드바 하단에 로그인된 사용자 이름·이메일·로그아웃 버튼
+  - Google OAuth Client 은 GCP 콘솔에서 사용자가 발급 · env 5개 (AUTH_GOOGLE_ID/SECRET/AUTH_SECRET/AUTH_URL/CRON_SECRET) 로 관리
 - **비밀번호 인증 제거 (interim · 추후 Google 도메인 로그인 예정)**
   - `proxy.ts` · `app/login/` · `app/api/login,logout/` · `lib/auth.ts` 삭제
   - AppShell 사이드바에서 로그아웃 버튼 제거
