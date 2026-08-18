@@ -22,6 +22,7 @@ import { ymKey } from "@/lib/frozen"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
+export const maxDuration = 60
 
 type Params = Promise<{ groupId: string }>
 type SearchParams = Promise<{ dep?: string; y?: string; m?: string }>

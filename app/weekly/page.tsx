@@ -12,6 +12,7 @@ import { WeekSelector } from "./WeekSelector"
 import { YearSelector } from "@/app/components/YearSelector"
 
 export const dynamic = "force-dynamic"
+export const maxDuration = 60
 export const revalidate = 0
 
 type SearchParams = Promise<{ w?: string; y?: string }>

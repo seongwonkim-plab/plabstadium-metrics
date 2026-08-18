@@ -21,6 +21,7 @@ import { ymKey } from "@/lib/frozen"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
+export const maxDuration = 60 // Vercel 함수 최대 실행 시간 (Hobby plan max)
 
 function branchTotal(
   sheet: MonthlyBranchSummary,

@@ -65,21 +65,25 @@ export type MonthlyData = {
   source: "frozen" | "live"
 }
 
+function fromFrozen(year: number, month: number, frozen: NonNullable<Awaited<ReturnType<typeof readFrozen>>>): MonthlyData {
+  const dbRev = new Map<number, DbRevenue>()
+  const match = new Map<number, BranchMatchStats>()
+  for (const b of OPEN_BRANCHES) {
+    dbRev.set(b.groupId, frozenToDb(b.groupId, frozen.byBranch[String(b.groupId)]))
+    match.set(b.groupId, frozenToMatch(b.groupId, frozen.byBranch[String(b.groupId)]))
+  }
+  return { dbRev, match, source: "frozen" }
+}
+
 // 한 월의 매출·매치 데이터를 frozen 파일 or live API 로 조회.
+// API 장애 대응: live 도 실패하면 frozen 파일이 있으면 사용 (커트오프 이후여도).
 export async function loadMonth(year: number, month: number): Promise<MonthlyData> {
   if (isFrozenTarget(year, month)) {
     const frozen = await readFrozen(year, month)
-    if (frozen) {
-      const dbRev = new Map<number, DbRevenue>()
-      const match = new Map<number, BranchMatchStats>()
-      for (const b of OPEN_BRANCHES) {
-        dbRev.set(b.groupId, frozenToDb(b.groupId, frozen.byBranch[String(b.groupId)]))
-        match.set(b.groupId, frozenToMatch(b.groupId, frozen.byBranch[String(b.groupId)]))
-      }
-      return { dbRev, match, source: "frozen" }
-    }
-    // frozen 대상인데 파일이 없으면 live 로 폴백 (첫 배포 직후, backfill 전 시나리오)
+    if (frozen) return fromFrozen(year, month, frozen)
+    // frozen 대상인데 파일 없으면 아래 live 로 폴백
   }
+
   // Live 경로: 해당 월만 범위로 쿼리 (배치 함수 재활용)
   const nextMonth = month === 12 ? 1 : month + 1
   const nextYear = month === 12 ? year + 1 : year
@@ -87,6 +91,13 @@ export async function loadMonth(year: number, month: number): Promise<MonthlyDat
     dbRevenueByBranchRange(year, month, nextYear, nextMonth),
     matchStatsByBranchRange(year, month, nextYear, nextMonth),
   ])
+
+  // Live 결과가 완전히 비었으면 (API 다운) frozen 파일이라도 fallback
+  if (revRange.size === 0 && matchRange.size === 0) {
+    const frozen = await readFrozen(year, month)
+    if (frozen) return fromFrozen(year, month, frozen)
+  }
+
   const key = ymKey(year, month)
   const dbRev = new Map<number, DbRevenue>()
   const match = new Map<number, BranchMatchStats>()
