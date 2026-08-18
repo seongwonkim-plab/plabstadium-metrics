@@ -2,6 +2,19 @@
 
 플랩 직영구장 지표 대시보드의 변경 이력. 커밋마다 자동으로 항목이 추가됩니다.
 
+## 2026-08-18
+
+- **Vercel 배포 준비**
+  - 미들웨어 자체 로그인 (`proxy.ts` · Next 16 컨벤션 · 이전 이름 middleware.ts)
+    - Web Crypto HMAC-SHA256 서명 쿠키 (Edge 런타임 호환)
+    - `DASHBOARD_PASSWORD` / `DASHBOARD_AUTH_SECRET` 두 env
+    - `/login` 페이지 · `POST /api/login` · `POST /api/logout`
+    - `/api/health` 는 인증 미적용 (사이드바 상태 표시기용)
+  - `lib/sheets.ts` — Vercel용 `GOOGLE_SERVICE_ACCOUNT_JSON` env 폴백 추가 (파일 경로 → JSON 문자열)
+  - 사이드바에 로그아웃 버튼 추가 (`AppShell` 클라이언트 래퍼로 /login 은 사이드바 숨김)
+  - README 를 프로젝트 개요 + 로컬 실행 + Vercel 배포 가이드로 재작성
+  - `.env.example` 갱신 (도메인·서비스계정 JSON·인증 env 항목 추가)
+
 ## 2026-08-13
 
 - **지점 상세 페이지 확장**

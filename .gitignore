@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# 예외: 실제 값 없이 필요한 키만 나열한 예시 파일은 커밋
+!.env.example
 
 # secrets - never commit service account keys
 .secrets/
