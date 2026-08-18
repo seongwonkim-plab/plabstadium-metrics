@@ -1,0 +1,8553 @@
+{
+  "yearMonth": "2023-08",
+  "frozenAt": "2026-08-18T07:11:25.354Z",
+  "byBranch": {
+    "119": {
+      "socialRevenue": 48105400,
+      "rentalRevenue": 2490000,
+      "managerCostActual": 0,
+      "managerCostEstimate": 8210000,
+      "releaseMatchCount": 328,
+      "match": {
+        "release": 328,
+        "cancel": 114,
+        "setup": 442,
+        "progressRate": 0.7420814479638009
+      }
+    },
+    "156": {
+      "socialRevenue": 16051200,
+      "rentalRevenue": 960000,
+      "managerCostActual": 0,
+      "managerCostEstimate": 2950000,
+      "releaseMatchCount": 118,
+      "match": {
+        "release": 118,
+        "cancel": 53,
+        "setup": 171,
+        "progressRate": 0.6900584795321637
+      }
+    },
+    "157": {
+      "socialRevenue": 5692000,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 1150000,
+      "releaseMatchCount": 46,
+      "match": {
+        "release": 46,
+        "cancel": 18,
+        "setup": 64,
+        "progressRate": 0.71875
+      }
+    },
+    "235": {
+      "socialRevenue": 22642600,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 3875000,
+      "releaseMatchCount": 155,
+      "match": {
+        "release": 155,
+        "cancel": 27,
+        "setup": 182,
+        "progressRate": 0.8516483516483516
+      }
+    },
+    "3433": {
+      "socialRevenue": 2906000,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 525000,
+      "releaseMatchCount": 21,
+      "match": {
+        "release": 21,
+        "cancel": 26,
+        "setup": 47,
+        "progressRate": 0.44680851063829785
+      }
+    },
+    "3497": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    },
+    "3540": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    },
+    "3620": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    },
+    "3639": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    },
+    "3957": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    },
+    "4087": {
+      "socialRevenue": 0,
+      "rentalRevenue": 0,
+      "managerCostActual": 0,
+      "managerCostEstimate": 0,
+      "releaseMatchCount": 0,
+      "match": {
+        "release": 0,
+        "cancel": 0,
+        "setup": 0,
+        "progressRate": null
+      }
+    }
+  },
+  "heatmap": [
+    {
+      "weekday": 1,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 10,
+      "release": 2,
+      "cancel": 2,
+      "rate": 0.5
+    },
+    {
+      "weekday": 1,
+      "hour": 11,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 12,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 13,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 14,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 15,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 1,
+      "hour": 16,
+      "release": 1,
+      "cancel": 3,
+      "rate": 0.25
+    },
+    {
+      "weekday": 1,
+      "hour": 17,
+      "release": 3,
+      "cancel": 1,
+      "rate": 0.75
+    },
+    {
+      "weekday": 1,
+      "hour": 18,
+      "release": 5,
+      "cancel": 6,
+      "rate": 0.45454545454545453
+    },
+    {
+      "weekday": 1,
+      "hour": 19,
+      "release": 10,
+      "cancel": 2,
+      "rate": 0.8333333333333334
+    },
+    {
+      "weekday": 1,
+      "hour": 20,
+      "release": 20,
+      "cancel": 3,
+      "rate": 0.8695652173913043
+    },
+    {
+      "weekday": 1,
+      "hour": 21,
+      "release": 11,
+      "cancel": 1,
+      "rate": 0.9166666666666666
+    },
+    {
+      "weekday": 1,
+      "hour": 22,
+      "release": 18,
+      "cancel": 1,
+      "rate": 0.9473684210526315
+    },
+    {
+      "weekday": 1,
+      "hour": 23,
+      "release": 10,
+      "cancel": 3,
+      "rate": 0.7692307692307693
+    },
+    {
+      "weekday": 2,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 10,
+      "release": 4,
+      "cancel": 1,
+      "rate": 0.8
+    },
+    {
+      "weekday": 2,
+      "hour": 11,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 12,
+      "release": 1,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 2,
+      "hour": 13,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 14,
+      "release": 3,
+      "cancel": 4,
+      "rate": 0.42857142857142855
+    },
+    {
+      "weekday": 2,
+      "hour": 15,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 2,
+      "hour": 16,
+      "release": 2,
+      "cancel": 3,
+      "rate": 0.4
+    },
+    {
+      "weekday": 2,
+      "hour": 17,
+      "release": 2,
+      "cancel": 3,
+      "rate": 0.4
+    },
+    {
+      "weekday": 2,
+      "hour": 18,
+      "release": 9,
+      "cancel": 5,
+      "rate": 0.6428571428571429
+    },
+    {
+      "weekday": 2,
+      "hour": 19,
+      "release": 12,
+      "cancel": 3,
+      "rate": 0.8
+    },
+    {
+      "weekday": 2,
+      "hour": 20,
+      "release": 22,
+      "cancel": 5,
+      "rate": 0.8148148148148148
+    },
+    {
+      "weekday": 2,
+      "hour": 21,
+      "release": 9,
+      "cancel": 6,
+      "rate": 0.6
+    },
+    {
+      "weekday": 2,
+      "hour": 22,
+      "release": 16,
+      "cancel": 9,
+      "rate": 0.64
+    },
+    {
+      "weekday": 2,
+      "hour": 23,
+      "release": 11,
+      "cancel": 7,
+      "rate": 0.6111111111111112
+    },
+    {
+      "weekday": 3,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 10,
+      "release": 4,
+      "cancel": 1,
+      "rate": 0.8
+    },
+    {
+      "weekday": 3,
+      "hour": 11,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 12,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 13,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 14,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 15,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 3,
+      "hour": 16,
+      "release": 2,
+      "cancel": 3,
+      "rate": 0.4
+    },
+    {
+      "weekday": 3,
+      "hour": 17,
+      "release": 4,
+      "cancel": 1,
+      "rate": 0.8
+    },
+    {
+      "weekday": 3,
+      "hour": 18,
+      "release": 7,
+      "cancel": 4,
+      "rate": 0.6363636363636364
+    },
+    {
+      "weekday": 3,
+      "hour": 19,
+      "release": 11,
+      "cancel": 3,
+      "rate": 0.7857142857142857
+    },
+    {
+      "weekday": 3,
+      "hour": 20,
+      "release": 22,
+      "cancel": 4,
+      "rate": 0.8461538461538461
+    },
+    {
+      "weekday": 3,
+      "hour": 21,
+      "release": 10,
+      "cancel": 4,
+      "rate": 0.7142857142857143
+    },
+    {
+      "weekday": 3,
+      "hour": 22,
+      "release": 20,
+      "cancel": 5,
+      "rate": 0.8
+    },
+    {
+      "weekday": 3,
+      "hour": 23,
+      "release": 9,
+      "cancel": 10,
+      "rate": 0.47368421052631576
+    },
+    {
+      "weekday": 4,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 10,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 11,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 12,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 13,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 14,
+      "release": 2,
+      "cancel": 3,
+      "rate": 0.4
+    },
+    {
+      "weekday": 4,
+      "hour": 15,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 4,
+      "hour": 16,
+      "release": 4,
+      "cancel": 1,
+      "rate": 0.8
+    },
+    {
+      "weekday": 4,
+      "hour": 17,
+      "release": 3,
+      "cancel": 2,
+      "rate": 0.6
+    },
+    {
+      "weekday": 4,
+      "hour": 18,
+      "release": 10,
+      "cancel": 8,
+      "rate": 0.5555555555555556
+    },
+    {
+      "weekday": 4,
+      "hour": 19,
+      "release": 12,
+      "cancel": 3,
+      "rate": 0.8
+    },
+    {
+      "weekday": 4,
+      "hour": 20,
+      "release": 22,
+      "cancel": 5,
+      "rate": 0.8148148148148148
+    },
+    {
+      "weekday": 4,
+      "hour": 21,
+      "release": 11,
+      "cancel": 4,
+      "rate": 0.7333333333333333
+    },
+    {
+      "weekday": 4,
+      "hour": 22,
+      "release": 22,
+      "cancel": 6,
+      "rate": 0.7857142857142857
+    },
+    {
+      "weekday": 4,
+      "hour": 23,
+      "release": 16,
+      "cancel": 7,
+      "rate": 0.6956521739130435
+    },
+    {
+      "weekday": 5,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 10,
+      "release": 1,
+      "cancel": 3,
+      "rate": 0.25
+    },
+    {
+      "weekday": 5,
+      "hour": 11,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 12,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 13,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 14,
+      "release": 2,
+      "cancel": 2,
+      "rate": 0.5
+    },
+    {
+      "weekday": 5,
+      "hour": 15,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 5,
+      "hour": 16,
+      "release": 4,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 5,
+      "hour": 17,
+      "release": 3,
+      "cancel": 1,
+      "rate": 0.75
+    },
+    {
+      "weekday": 5,
+      "hour": 18,
+      "release": 7,
+      "cancel": 7,
+      "rate": 0.5
+    },
+    {
+      "weekday": 5,
+      "hour": 19,
+      "release": 12,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 5,
+      "hour": 20,
+      "release": 21,
+      "cancel": 1,
+      "rate": 0.9545454545454546
+    },
+    {
+      "weekday": 5,
+      "hour": 21,
+      "release": 12,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 5,
+      "hour": 22,
+      "release": 20,
+      "cancel": 1,
+      "rate": 0.9523809523809523
+    },
+    {
+      "weekday": 5,
+      "hour": 23,
+      "release": 18,
+      "cancel": 1,
+      "rate": 0.9473684210526315
+    },
+    {
+      "weekday": 6,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 6,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 6,
+      "hour": 9,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 6,
+      "hour": 10,
+      "release": 13,
+      "cancel": 3,
+      "rate": 0.8125
+    },
+    {
+      "weekday": 6,
+      "hour": 11,
+      "release": 2,
+      "cancel": 2,
+      "rate": 0.5
+    },
+    {
+      "weekday": 6,
+      "hour": 12,
+      "release": 2,
+      "cancel": 10,
+      "rate": 0.16666666666666666
+    },
+    {
+      "weekday": 6,
+      "hour": 13,
+      "release": 2,
+      "cancel": 2,
+      "rate": 0.5
+    },
+    {
+      "weekday": 6,
+      "hour": 14,
+      "release": 3,
+      "cancel": 7,
+      "rate": 0.3
+    },
+    {
+      "weekday": 6,
+      "hour": 15,
+      "release": 1,
+      "cancel": 3,
+      "rate": 0.25
+    },
+    {
+      "weekday": 6,
+      "hour": 16,
+      "release": 4,
+      "cancel": 4,
+      "rate": 0.5
+    },
+    {
+      "weekday": 6,
+      "hour": 17,
+      "release": 4,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 6,
+      "hour": 18,
+      "release": 9,
+      "cancel": 6,
+      "rate": 0.6
+    },
+    {
+      "weekday": 6,
+      "hour": 19,
+      "release": 7,
+      "cancel": 1,
+      "rate": 0.875
+    },
+    {
+      "weekday": 6,
+      "hour": 20,
+      "release": 21,
+      "cancel": 2,
+      "rate": 0.9130434782608695
+    },
+    {
+      "weekday": 6,
+      "hour": 21,
+      "release": 5,
+      "cancel": 3,
+      "rate": 0.625
+    },
+    {
+      "weekday": 6,
+      "hour": 22,
+      "release": 14,
+      "cancel": 3,
+      "rate": 0.8235294117647058
+    },
+    {
+      "weekday": 6,
+      "hour": 23,
+      "release": 15,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 7,
+      "hour": 7,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 7,
+      "hour": 8,
+      "release": 0,
+      "cancel": 0,
+      "rate": null
+    },
+    {
+      "weekday": 7,
+      "hour": 9,
+      "release": 4,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 7,
+      "hour": 10,
+      "release": 12,
+      "cancel": 4,
+      "rate": 0.75
+    },
+    {
+      "weekday": 7,
+      "hour": 11,
+      "release": 1,
+      "cancel": 3,
+      "rate": 0.25
+    },
+    {
+      "weekday": 7,
+      "hour": 12,
+      "release": 3,
+      "cancel": 5,
+      "rate": 0.375
+    },
+    {
+      "weekday": 7,
+      "hour": 13,
+      "release": 0,
+      "cancel": 4,
+      "rate": 0
+    },
+    {
+      "weekday": 7,
+      "hour": 14,
+      "release": 3,
+      "cancel": 5,
+      "rate": 0.375
+    },
+    {
+      "weekday": 7,
+      "hour": 15,
+      "release": 4,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 7,
+      "hour": 16,
+      "release": 7,
+      "cancel": 5,
+      "rate": 0.5833333333333334
+    },
+    {
+      "weekday": 7,
+      "hour": 17,
+      "release": 4,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 7,
+      "hour": 18,
+      "release": 12,
+      "cancel": 3,
+      "rate": 0.8
+    },
+    {
+      "weekday": 7,
+      "hour": 19,
+      "release": 8,
+      "cancel": 0,
+      "rate": 1
+    },
+    {
+      "weekday": 7,
+      "hour": 20,
+      "release": 20,
+      "cancel": 1,
+      "rate": 0.9523809523809523
+    },
+    {
+      "weekday": 7,
+      "hour": 21,
+      "release": 6,
+      "cancel": 1,
+      "rate": 0.8571428571428571
+    },
+    {
+      "weekday": 7,
+      "hour": 22,
+      "release": 13,
+      "cancel": 2,
+      "rate": 0.8666666666666667
+    },
+    {
+      "weekday": 7,
+      "hour": 23,
+      "release": 7,
+      "cancel": 1,
+      "rate": 0.875
+    }
+  ],
+  "stadiumHeatmaps": {
+    "119": [
+      {
+        "stadiumId": 197,
+        "name": "1구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          }
+        ]
+      },
+      {
+        "stadiumId": 198,
+        "name": "2구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      },
+      {
+        "stadiumId": 199,
+        "name": "3구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      },
+      {
+        "stadiumId": 200,
+        "name": "실내구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      }
+    ],
+    "156": [
+      {
+        "stadiumId": 267,
+        "name": "1구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      },
+      {
+        "stadiumId": 268,
+        "name": "2구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 1,
+            "cancel": 4,
+            "rate": 0.2
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 1,
+            "cancel": 4,
+            "rate": 0.2
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 4,
+            "rate": 0
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 2,
+            "rate": 0
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          }
+        ]
+      }
+    ],
+    "157": [
+      {
+        "stadiumId": 269,
+        "name": "단일구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      }
+    ],
+    "235": [
+      {
+        "stadiumId": 394,
+        "name": "단일구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 1,
+            "cancel": 3,
+            "rate": 0.25
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 2,
+            "cancel": 3,
+            "rate": 0.4
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 5,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 3,
+            "cancel": 2,
+            "rate": 0.6
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 4,
+            "cancel": 1,
+            "rate": 0.8
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 2,
+            "cancel": 2,
+            "rate": 0.5
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 3,
+            "cancel": 1,
+            "rate": 0.75
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 4,
+            "cancel": 0,
+            "rate": 1
+          }
+        ]
+      }
+    ],
+    "3433": [
+      {
+        "stadiumId": 12144,
+        "name": "단일구장",
+        "cells": [
+          {
+            "weekday": 1,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 18,
+            "release": 0,
+            "cancel": 3,
+            "rate": 0
+          },
+          {
+            "weekday": 1,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 20,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 1,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 1,
+            "hour": 22,
+            "release": 1,
+            "cancel": 1,
+            "rate": 0.5
+          },
+          {
+            "weekday": 1,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 18,
+            "release": 0,
+            "cancel": 3,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 20,
+            "release": 1,
+            "cancel": 2,
+            "rate": 0.3333333333333333
+          },
+          {
+            "weekday": 2,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 2,
+            "hour": 22,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 2,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 18,
+            "release": 0,
+            "cancel": 2,
+            "rate": 0
+          },
+          {
+            "weekday": 3,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 20,
+            "release": 1,
+            "cancel": 1,
+            "rate": 0.5
+          },
+          {
+            "weekday": 3,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 3,
+            "hour": 22,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 3,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 18,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 4,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 20,
+            "release": 2,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 4,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 4,
+            "hour": 22,
+            "release": 1,
+            "cancel": 2,
+            "rate": 0.3333333333333333
+          },
+          {
+            "weekday": 4,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 18,
+            "release": 0,
+            "cancel": 2,
+            "rate": 0
+          },
+          {
+            "weekday": 5,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 20,
+            "release": 2,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 5,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 5,
+            "hour": 22,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 5,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 18,
+            "release": 1,
+            "cancel": 2,
+            "rate": 0.3333333333333333
+          },
+          {
+            "weekday": 6,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 20,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 6,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 6,
+            "hour": 22,
+            "release": 0,
+            "cancel": 1,
+            "rate": 0
+          },
+          {
+            "weekday": 6,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 7,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 8,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 9,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 10,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 11,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 12,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 13,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 14,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 15,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 16,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 17,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 18,
+            "release": 2,
+            "cancel": 1,
+            "rate": 0.6666666666666666
+          },
+          {
+            "weekday": 7,
+            "hour": 19,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 20,
+            "release": 3,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 21,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          },
+          {
+            "weekday": 7,
+            "hour": 22,
+            "release": 1,
+            "cancel": 0,
+            "rate": 1
+          },
+          {
+            "weekday": 7,
+            "hour": 23,
+            "release": 0,
+            "cancel": 0,
+            "rate": null
+          }
+        ]
+      }
+    ],
+    "3497": [],
+    "3540": [],
+    "3620": [],
+    "3639": [],
+    "3957": [],
+    "4087": []
+  }
+}

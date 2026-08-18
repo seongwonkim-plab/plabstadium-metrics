@@ -59,6 +59,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             >
               작업 이력
             </Link>
+            <div className="mt-4 mb-1 px-3 pt-2 border-t border-neutral-100 text-[10px] uppercase tracking-wide text-neutral-400">관리</div>
+            <Link href="/admin/freeze" className="block rounded-md px-3 py-2 hover:bg-neutral-100">
+              Freeze 관리
+            </Link>
           </nav>
         </div>
         <div className="border-t border-neutral-200 px-3 py-3">

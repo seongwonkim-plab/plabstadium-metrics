@@ -1,7 +1,12 @@
 import { unstable_cache } from "next/cache"
 
-const PLAB_API_URL = process.env.PLAB_API_URL || "https://data-gateway.preview.plabfootball.com"
-const PLAB_API_KEY = process.env.PLAB_API_KEY || ""
+// 환경변수는 함수 호출 시점에 읽음 (dotenv 로드 순서 이슈 회피).
+function apiUrl(): string {
+  return process.env.PLAB_API_URL || "https://data-gateway.preview.plabfootball.com"
+}
+function apiKey(): string {
+  return process.env.PLAB_API_KEY || ""
+}
 
 type PlabQueryResponse<T = Record<string, unknown>> = {
   success: boolean
@@ -20,14 +25,28 @@ const CACHE_TTL_SEC = 30 * 60
 // Plab API 가 통상 100ms~2s, 최악의 배치 쿼리도 10s 미만.
 const QUERY_TIMEOUT_MS = 15_000
 
+// 스크립트 (freeze:backfill 등) 에서 직접 호출용. 캐시 미적용, 실패도 그대로 반환.
+export async function plabQueryDirect<T = Record<string, unknown>>(
+  query: string,
+): Promise<PlabQueryResponse<T>> {
+  try {
+    return await fetchQueryRaw<T>(query)
+  } catch (e) {
+    return {
+      success: false,
+      error: e instanceof Error ? e.message : "unknown error",
+    }
+  }
+}
+
 async function fetchQueryRaw<T>(query: string): Promise<PlabQueryResponse<T>> {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), QUERY_TIMEOUT_MS)
   try {
-    const response = await fetch(`${PLAB_API_URL}/api/query`, {
+    const response = await fetch(`${apiUrl()}/api/query`, {
       method: "POST",
       headers: {
-        "X-API-Key": PLAB_API_KEY,
+        "X-API-Key": apiKey(),
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query }),
@@ -48,11 +67,25 @@ async function fetchQueryRaw<T>(query: string): Promise<PlabQueryResponse<T>> {
   }
 }
 
+// Next.js 서버 컨텍스트가 아니면 (예: tsx 스크립트) unstable_cache 는 못 씀.
+// 프로세스가 Next.js 서버 프로세스인지 판정.
+function inNextRuntime(): boolean {
+  return Boolean(
+    process.env.NEXT_RUNTIME ||
+      process.env.__NEXT_PRIVATE_ORIGIN ||
+      process.env.NEXT_PHASE,
+  )
+}
+
 export async function plabQuery<T = Record<string, unknown>>(
   query: string,
 ): Promise<PlabQueryResponse<T>> {
-  // 각 unique query 를 개별 캐시 키로 등록 (Vercel Data Cache 에 저장됨).
-  // 성공 응답만 캐시됨 (실패는 throw → 캐시 안 됨 → 다음 호출에서 재시도).
+  // 스크립트 컨텍스트: 캐시 우회하고 raw fetch 직접
+  if (!inNextRuntime()) {
+    return plabQueryDirect<T>(query)
+  }
+  // Next.js 서버: Vercel Data Cache 사용 (unstable_cache).
+  // 성공 응답만 캐시 (실패는 throw → 캐시 안 됨 → 다음 호출에서 재시도).
   const cached = unstable_cache(
     async () => fetchQueryRaw<T>(query),
     ["plab-query", query],
@@ -61,7 +94,6 @@ export async function plabQuery<T = Record<string, unknown>>(
   try {
     return (await cached()) as PlabQueryResponse<T>
   } catch (e) {
-    // 실패 시 caller 는 res.success=false 로 취급 (기존 인터페이스 유지)
     return {
       success: false,
       error: e instanceof Error ? e.message : "unknown error",

@@ -4,6 +4,16 @@
 
 ## 2026-08-18
 
+- **Frozen 스냅샷: 과거 월 데이터를 JSON으로 저장 (12개월 트렌드 재활성화)**
+  - 문제: Plab API가 자주 다운 → 페이지 로딩 매번 실패/지연
+  - 해결: 3개월 이전 데이터를 `data/frozen/YYYY-MM.json` 에 저장 → API 무관하게 즉시 렌더
+  - **초기 백필 완료**: 2020-01 ~ 2026-05 총 77개월 (13MB, 4분 44초 소요)
+  - Hybrid 로더 (`lib/hybrid.ts`): 3개월 이전 → 파일 · 최근 → live API
+  - 페이지 성능: 과거 월 로딩 **94ms** (기존 30초+), 현재 월은 여전히 API 의존
+  - 12개월 트렌드 그래프 재활성화 (11개월 캐시 + 1개월 live)
+  - Vercel Cron 매월 1일 03:00 KST 자동 실행 (`vercel.json`)
+  - 관리 페이지 `/admin/freeze` (월별 상태 + 수동 재freeze)
+  - 스크립트: `npm run freeze -- YYYY M` · `npm run freeze:backfill`
 - **plab.ts 캐시 전략 개편: Vercel Data Cache + 쿼리 타임아웃**
   - 문제: 5분 인메모리 캐시는 Vercel 서버리스 콜드스타트마다 소실 → 매번 Plab API 재호출 → API가 다운되면 페이지 로딩 전체가 대기
   - `unstable_cache` 로 Vercel Data Cache 사용 → **콜드스타트 사이에도 30분 캐시 유지**

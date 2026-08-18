@@ -7,23 +7,17 @@ import {
   emptyMonthly,
 } from "@/lib/ledger"
 import { OPEN_BRANCHES, type Branch } from "@/lib/branches"
-import {
-  matchStatsByBranchRange,
-  getMatchStatsForMonth,
-  type BranchMatchStats,
-} from "@/lib/matches"
-import {
-  dbRevenueByBranchRange,
-  getRevenueForMonth,
-  type DbRevenue,
-} from "@/lib/revenue"
+import type { BranchMatchStats } from "@/lib/matches"
+import type { DbRevenue } from "@/lib/revenue"
 import { won, wonShort, pct, deltaLabel } from "@/lib/format"
-import { currentYearMonth, previousMonth, yearOptions } from "@/lib/period"
+import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
 import { YearSelector } from "./components/YearSelector"
 import { MonthNumSelector } from "./components/MonthNumSelector"
 import { DepreciationToggle } from "./components/DepreciationToggle"
 import { ProgressHeatmap } from "./components/ProgressHeatmap"
-import { progressHeatmap } from "@/lib/heatmap"
+import { TrendChart, type TrendPoint } from "./components/TrendChart"
+import { loadMonths, loadHeatmap } from "@/lib/hybrid"
+import { ymKey } from "@/lib/frozen"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -78,73 +72,77 @@ export default async function MonthlyDashboardPage({
   const includeDep = sp.dep !== "0"
   const prev = previousMonth(year, month)
 
-  // 12개월 트렌드는 임시 비활성 (API 부하 완화). 현재/이전 월 2개월치만 조회.
-  const twoMonths = [prev, { year, month }]
-  const rangeStart = twoMonths[0]
-  const rangeEndExclusive =
-    month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
+  // 12개월 트렌드 + 히트맵. Frozen 파일(3개월 이전)은 파일에서, 최근 월은 live API.
+  const trendMonths = monthsBack(year, month, 12)
 
   await loadLedger()
-  const [revRange, matchRange, heatmap] = await Promise.all([
-    dbRevenueByBranchRange(
-      rangeStart.year,
-      rangeStart.month,
-      rangeEndExclusive.year,
-      rangeEndExclusive.month,
-    ),
-    matchStatsByBranchRange(
-      rangeStart.year,
-      rangeStart.month,
-      rangeEndExclusive.year,
-      rangeEndExclusive.month,
-    ),
-    progressHeatmap(year, month),
+  const [monthData, heatmap] = await Promise.all([
+    loadMonths(trendMonths),
+    loadHeatmap(year, month),
   ])
 
   const sheetsPerMonth = await Promise.all(
-    twoMonths.map((m) => monthlyByBranch(m.year, m.month)),
+    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
   )
   const ledgerMapByYm = new Map<string, Map<number, MonthlyBranchSummary>>()
-  twoMonths.forEach((m, i) => {
-    ledgerMapByYm.set(`${m.year}-${String(m.month).padStart(2, "0")}`, ledgerMapForMonth(sheetsPerMonth[i]))
+  trendMonths.forEach((m, i) => {
+    ledgerMapByYm.set(ymKey(m.year, m.month), ledgerMapForMonth(sheetsPerMonth[i]))
   })
 
+  const curKey = ymKey(year, month)
+  const prevKey = ymKey(prev.year, prev.month)
+  const curMd = monthData.get(curKey)
+  const prvMd = monthData.get(prevKey)
   const cur = {
-    ledgerMap:
-      ledgerMapByYm.get(`${year}-${String(month).padStart(2, "0")}`) ??
-      new Map<number, MonthlyBranchSummary>(),
-    matches: new Map(
-      OPEN_BRANCHES.map((b) => [
-        b.groupId,
-        getMatchStatsForMonth(matchRange, b.groupId, year, month),
-      ]),
-    ),
-    dbRev: new Map(
-      OPEN_BRANCHES.map((b) => [
-        b.groupId,
-        getRevenueForMonth(revRange, b.groupId, year, month),
-      ]),
-    ),
+    ledgerMap: ledgerMapByYm.get(curKey) ?? new Map<number, MonthlyBranchSummary>(),
+    matches: curMd?.match ?? new Map<number, BranchMatchStats>(),
+    dbRev: curMd?.dbRev ?? new Map<number, DbRevenue>(),
   }
-  // 이전 월이 트렌드 범위 안에 없을 수도 있으므로 (선택월이 최소값 근처면 없음) 안전하게 처리
-  const prevYm = `${prev.year}-${String(prev.month).padStart(2, "0")}`
+  // 이전 월이 트렌드 범위에 없을 수도 있음 (극단적 케이스)
   const prv = {
     ledgerMap:
-      ledgerMapByYm.get(prevYm) ??
+      ledgerMapByYm.get(prevKey) ??
       ledgerMapForMonth(await monthlyByBranch(prev.year, prev.month)),
-    matches: new Map(
-      OPEN_BRANCHES.map((b) => [
-        b.groupId,
-        getMatchStatsForMonth(matchRange, b.groupId, prev.year, prev.month),
-      ]),
-    ),
-    dbRev: new Map(
-      OPEN_BRANCHES.map((b) => [
-        b.groupId,
-        getRevenueForMonth(revRange, b.groupId, prev.year, prev.month),
-      ]),
-    ),
+    matches: prvMd?.match ?? new Map<number, BranchMatchStats>(),
+    dbRev: prvMd?.dbRev ?? new Map<number, DbRevenue>(),
   }
+
+  function branchTotalForMonth(b: Branch, y: number, mo: number) {
+    const key = ymKey(y, mo)
+    const sheet = ledgerMapByYm.get(key)?.get(b.groupId) ?? emptyMonthly(b, y, mo)
+    const db = monthData.get(key)?.dbRev.get(b.groupId) ?? {
+      groupId: b.groupId,
+      socialRevenue: 0,
+      rentalRevenue: 0,
+      managerCost: 0,
+      managerCostActual: 0,
+      managerCostEstimate: 0,
+      releaseMatchCount: 0,
+    }
+    return branchTotal(sheet, db, includeDep)
+  }
+
+  const trend: TrendPoint[] = trendMonths.map((m) => {
+    const key = ymKey(m.year, m.month)
+    let revenue = 0
+    let expense = 0
+    let managerCost = 0
+    const rates: number[] = []
+    for (const b of OPEN_BRANCHES) {
+      const t = branchTotalForMonth(b, m.year, m.month)
+      revenue += t.revenue
+      expense += t.expense
+      managerCost += t.managerCost
+      const r = monthData.get(key)?.match.get(b.groupId)?.progressRate
+      if (r !== null && r !== undefined) rates.push(r)
+    }
+    const progressRate = rates.length > 0 ? rates.reduce((s, v) => s + v, 0) / rates.length : null
+    return { ...m, revenue, expense: expense + managerCost, progressRate }
+  })
+
+  // 데이터 소스 표시 (frozen vs live 비율)
+  const frozenCount = Array.from(monthData.values()).filter((v) => v.source === "frozen").length
+  const liveCount = monthData.size - frozenCount
 
   const rows: {
     branch: Branch
@@ -182,12 +180,11 @@ export default async function MonthlyDashboardPage({
     return rates.reduce((s, v) => s + v, 0) / rates.length
   })()
 
-  // 이전 월 합계 (12개월 트렌드가 비활성이므로 prv 에서 직접 계산)
-  const prevBranchTotals = OPEN_BRANCHES.map((b) => {
-    const sheet = prv.ledgerMap.get(b.groupId) ?? emptyMonthly(b, prev.year, prev.month)
-    const db = prv.dbRev.get(b.groupId)!
-    return { total: branchTotal(sheet, db, includeDep), match: prv.matches.get(b.groupId) }
-  })
+  // 이전 월 합계 (전월 대비 델타 계산용)
+  const prevBranchTotals = OPEN_BRANCHES.map((b) => ({
+    total: branchTotalForMonth(b, prev.year, prev.month),
+    match: prv.matches.get(b.groupId),
+  }))
   const prevRev = prevBranchTotals.reduce((s, r) => s + r.total.revenue, 0)
   const prevExp = prevBranchTotals.reduce((s, r) => s + r.total.expense + r.total.managerCost, 0)
   const prevProgress = (() => {
@@ -310,15 +307,24 @@ export default async function MonthlyDashboardPage({
       </section>
 
       <section>
+        <div className="mb-2 flex items-baseline justify-between">
+          <div className="text-xs text-neutral-500">
+            12개월 매출·지출 추이 + 진행률 (전체 합계)
+          </div>
+          <div className="text-[10px] text-neutral-400">
+            {frozenCount > 0 && `${frozenCount}개월 캐시 · `}
+            {liveCount > 0 && `${liveCount}개월 실시간`}
+          </div>
+        </div>
+        <TrendChart data={trend} />
+      </section>
+
+      <section>
         <div className="mb-2 text-xs text-neutral-500">
           요일 × 시간대 진행률 히트맵 ({year}년 {month}월 · 영업 지점 합계)
         </div>
         <ProgressHeatmap cells={heatmap} />
       </section>
-
-      <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-[11px] text-amber-800">
-        12개월 매출·지출 추이 그래프는 Plab API 부하 완화를 위해 임시 비활성 (현재/이전 월만 조회).
-      </div>
     </div>
   )
 }

@@ -14,6 +14,11 @@ export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl
   if (PUBLIC_PATHS.has(pathname)) return NextResponse.next()
 
+  // Bearer 토큰 인증 (Vercel Cron 용)
+  const authHeader = req.headers.get("authorization")
+  const cronSecret = process.env.CRON_SECRET
+  if (cronSecret && authHeader === `Bearer ${cronSecret}`) return NextResponse.next()
+
   const cookie = req.cookies.get(AUTH_COOKIE_NAME)?.value
   if (await isValidAuthCookie(cookie)) return NextResponse.next()
 

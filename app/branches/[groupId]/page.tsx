@@ -7,24 +7,18 @@ import {
   emptyMonthly,
   type MonthlyBranchSummary,
 } from "@/lib/ledger"
-import {
-  matchStatsByBranchRange,
-  getMatchStatsForMonth,
-} from "@/lib/matches"
-import {
-  dbRevenueByBranchRange,
-  getRevenueForMonth,
-  type DbRevenue,
-} from "@/lib/revenue"
+import type { DbRevenue } from "@/lib/revenue"
 import { loadBranchInfo, matchStatsByStadium } from "@/lib/branch-detail"
 import { won, wonShort, pct } from "@/lib/format"
-import { currentYearMonth, previousMonth, yearOptions } from "@/lib/period"
+import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
 import { BranchSwitcher } from "./BranchSwitcher"
 import { DepreciationToggle } from "@/app/components/DepreciationToggle"
 import { YearSelector } from "@/app/components/YearSelector"
 import { MonthNumSelector } from "@/app/components/MonthNumSelector"
 import { ProgressHeatmap } from "@/app/components/ProgressHeatmap"
-import { progressHeatmapByStadium } from "@/lib/heatmap"
+import { TrendChart, type TrendPoint } from "@/app/components/TrendChart"
+import { loadMonths, loadStadiumHeatmaps } from "@/lib/hybrid"
+import { ymKey } from "@/lib/frozen"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -73,25 +67,68 @@ export default async function BranchDetailPage({
   const year = sp.y ? Number(sp.y) : defaultMonth.year
   const month = sp.m ? Number(sp.m) : defaultMonth.month
 
-  // 12개월 트렌드는 임시 비활성 (API 부하 완화). 선택 월 1개월만 조회.
-  const rangeEndExclusive =
-    month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
+  // 12개월 트렌드 (hybrid: frozen + live)
+  const trendMonths = monthsBack(year, month, 12)
 
-  const [info, revRange, matchRange, stadiumStats, stadiumHeatmaps, ledgerList] = await Promise.all([
+  const [info, monthData, stadiumStats, stadiumHeatmaps, ledgerList] = await Promise.all([
     loadBranchInfo(groupId),
-    dbRevenueByBranchRange(year, month, rangeEndExclusive.year, rangeEndExclusive.month),
-    matchStatsByBranchRange(year, month, rangeEndExclusive.year, rangeEndExclusive.month),
+    loadMonths(trendMonths),
     matchStatsByStadium(groupId, year, month),
-    progressHeatmapByStadium(groupId, year, month),
+    loadStadiumHeatmaps(groupId, year, month),
     monthlyByBranch(year, month),
   ])
 
   const summary: MonthlyBranchSummary =
     ledgerList.find((s) => s.branch.groupId === groupId) ??
     emptyMonthly(branch, year, month)
-  const db: DbRevenue = getRevenueForMonth(revRange, groupId, year, month)
-  const match = getMatchStatsForMonth(matchRange, groupId, year, month)
+  const curKey = ymKey(year, month)
+  const curMd = monthData.get(curKey)
+  const db: DbRevenue = curMd?.dbRev.get(groupId) ?? {
+    groupId,
+    socialRevenue: 0,
+    rentalRevenue: 0,
+    managerCost: 0,
+    managerCostActual: 0,
+    managerCostEstimate: 0,
+    releaseMatchCount: 0,
+  }
+  const match = curMd?.match.get(groupId) ?? {
+    groupId,
+    setup: 0,
+    release: 0,
+    cancel: 0,
+    progressRate: null,
+    socialRevenue: 0,
+  }
   const t = branchTotal(summary, db, includeDep)
+
+  // 12개월 트렌드 데이터 (지점 단위)
+  const sheetsPerMonth = await Promise.all(
+    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
+  )
+  const sheetByYm = new Map<string, MonthlyBranchSummary | undefined>()
+  trendMonths.forEach((m, i) => {
+    sheetByYm.set(ymKey(m.year, m.month), sheetsPerMonth[i].find((x) => x.branch.groupId === groupId))
+  })
+  const trend: TrendPoint[] = trendMonths.map((m) => {
+    const key = ymKey(m.year, m.month)
+    const sheet = sheetByYm.get(key) ?? emptyMonthly(branch, m.year, m.month)
+    const md = monthData.get(key)
+    const dbM = md?.dbRev.get(groupId) ?? {
+      groupId,
+      socialRevenue: 0,
+      rentalRevenue: 0,
+      managerCost: 0,
+      managerCostActual: 0,
+      managerCostEstimate: 0,
+      releaseMatchCount: 0,
+    }
+    const bt = branchTotal(sheet, dbM, includeDep)
+    const rate = md?.match.get(groupId)?.progressRate ?? null
+    return { ...m, revenue: bt.revenue, expense: bt.expenseWithMgr, progressRate: rate }
+  })
+  const frozenCount = Array.from(monthData.values()).filter((v) => v.source === "frozen").length
+  const liveCount = monthData.size - frozenCount
 
   const openStadiums = info.stadiums.filter((s) => s.isOpen).length
   const openLabel = info.openDate
@@ -153,9 +190,18 @@ export default async function BranchDetailPage({
         />
       </section>
 
-      <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-[11px] text-amber-800">
-        12개월 매출·지출 추이 그래프는 Plab API 부하 완화를 위해 임시 비활성.
-      </div>
+      <section>
+        <div className="mb-2 flex items-baseline justify-between">
+          <div className="text-xs text-neutral-500">
+            12개월 매출·지출 추이 + 진행률 ({branch.displayName})
+          </div>
+          <div className="text-[10px] text-neutral-400">
+            {frozenCount > 0 && `${frozenCount}개월 캐시 · `}
+            {liveCount > 0 && `${liveCount}개월 실시간`}
+          </div>
+        </div>
+        <TrendChart data={trend} />
+      </section>
 
       <section>
         <div className="mb-2 flex items-baseline justify-between">
