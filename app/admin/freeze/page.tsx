@@ -1,6 +1,5 @@
 import { listFrozen, FREEZE_CUTOFF_MONTHS } from "@/lib/frozen"
 import { currentYearMonth, previousMonth, DATA_START_YEAR } from "@/lib/period"
-import { RefreezeButton } from "./RefreezeButton"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -85,6 +84,12 @@ export default async function AdminFreezePage() {
         </div>
       )}
 
+      <div className="rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
+        수동 재freeze 는 인증 필요 (interim: 대시보드 로그인 비활성).
+        <code className="mx-1 rounded bg-neutral-100 px-1">npm run freeze -- YYYY M</code>
+        로 CLI 에서 실행하세요. Vercel Cron 은 매월 1일 03:00 KST 에 자동으로 3개월 전 월을 저장합니다.
+      </div>
+
       <section>
         <div className="mb-2 text-xs text-neutral-500">월별 상태</div>
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
@@ -95,7 +100,6 @@ export default async function AdminFreezePage() {
                 <th className="px-3 py-2 text-left font-normal">상태</th>
                 <th className="px-3 py-2 text-left font-normal">Frozen 시각</th>
                 <th className="px-3 py-2 text-right font-normal">크기</th>
-                <th className="px-3 py-2 text-right font-normal">작업</th>
               </tr>
             </thead>
             <tbody>
@@ -125,9 +129,6 @@ export default async function AdminFreezePage() {
                     </td>
                     <td className="px-3 py-2.5 text-right text-xs text-neutral-500">
                       {f ? formatBytes(f.sizeBytes) : "—"}
-                    </td>
-                    <td className="px-3 py-2.5 text-right">
-                      <RefreezeButton year={t.year} month={t.month} exists={!!f} />
                     </td>
                   </tr>
                 )

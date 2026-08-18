@@ -1,25 +1,7 @@
-"use client"
-
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
 import { StatusIndicator } from "./StatusIndicator"
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
-  const router = useRouter()
-
-  // /login 은 사이드바 없는 단독 화면
-  if (pathname === "/login") return <>{children}</>
-
-  async function handleLogout() {
-    try {
-      await fetch("/api/logout", { method: "POST" })
-    } finally {
-      router.replace("/login")
-      router.refresh()
-    }
-  }
-
   return (
     <div className="flex min-h-screen">
       <aside className="w-56 shrink-0 flex flex-col border-r border-neutral-200">
@@ -59,8 +41,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             >
               작업 이력
             </Link>
-            <div className="mt-4 mb-1 px-3 pt-2 border-t border-neutral-100 text-[10px] uppercase tracking-wide text-neutral-400">관리</div>
-            <Link href="/admin/freeze" className="block rounded-md px-3 py-2 hover:bg-neutral-100">
+            <div className="mt-4 mb-1 px-3 pt-2 border-t border-neutral-100 text-[10px] uppercase tracking-wide text-neutral-400">
+              관리
+            </div>
+            <Link
+              href="/admin/freeze"
+              className="block rounded-md px-3 py-2 hover:bg-neutral-100"
+            >
               Freeze 관리
             </Link>
           </nav>
@@ -70,13 +57,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             시스템 상태
           </div>
           <StatusIndicator />
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="mt-2 w-full rounded-md px-2 py-1.5 text-left text-xs text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800"
-          >
-            로그아웃
-          </button>
         </div>
       </aside>
       <main className="flex-1 px-8 py-6">{children}</main>

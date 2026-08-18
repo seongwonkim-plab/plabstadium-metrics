@@ -4,6 +4,11 @@
 
 ## 2026-08-18
 
+- **비밀번호 인증 제거 (interim · 추후 Google 도메인 로그인 예정)**
+  - `proxy.ts` · `app/login/` · `app/api/login,logout/` · `lib/auth.ts` 삭제
+  - AppShell 사이드바에서 로그아웃 버튼 제거
+  - `/api/freeze` 는 자체 Bearer CRON_SECRET 체크로 이관
+  - 관리 페이지의 수동 재freeze 버튼 제거 (인증 없어서 CLI 로 이관)
 - **Frozen 스냅샷: 과거 월 데이터를 JSON으로 저장 (12개월 트렌드 재활성화)**
   - 문제: Plab API가 자주 다운 → 페이지 로딩 매번 실패/지연
   - 해결: 3개월 이전 데이터를 `data/frozen/YYYY-MM.json` 에 저장 → API 무관하게 즉시 렌더
