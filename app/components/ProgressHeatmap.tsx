@@ -87,7 +87,7 @@ export function ProgressHeatmap({ cells }: { cells: HeatmapCell[] }) {
                         {pct}%
                       </div>
                       <div className="text-[10px] opacity-80 leading-tight">
-                        {c.release}
+                        {c.release}/{c.release + c.cancel}
                       </div>
                     </td>
                   )
@@ -105,7 +105,7 @@ export function ProgressHeatmap({ cells }: { cells: HeatmapCell[] }) {
           <div style={{ background: "#158049", flex: 1 }} />
         </div>
         <span>진행률 높음</span>
-        <span className="ml-4">셀 상단: 진행률 · 하단: 진행 매치 수 (취소 제외)</span>
+        <span className="ml-4">셀 상단: 진행률 · 하단: 진행 / 세팅 (예: 1/3 = 3건 중 1건 진행)</span>
       </div>
     </div>
   )
