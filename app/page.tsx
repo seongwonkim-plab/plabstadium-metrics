@@ -18,13 +18,12 @@ import {
   type DbRevenue,
 } from "@/lib/revenue"
 import { won, wonShort, pct, deltaLabel } from "@/lib/format"
-import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
+import { currentYearMonth, previousMonth, yearOptions } from "@/lib/period"
 import { YearSelector } from "./components/YearSelector"
 import { MonthNumSelector } from "./components/MonthNumSelector"
 import { DepreciationToggle } from "./components/DepreciationToggle"
 import { ProgressHeatmap } from "./components/ProgressHeatmap"
 import { progressHeatmap } from "@/lib/heatmap"
-import { TrendChart, type TrendPoint } from "./components/TrendChart"
 
 export const dynamic = "force-dynamic"
 export const revalidate = 0
@@ -79,15 +78,12 @@ export default async function MonthlyDashboardPage({
   const includeDep = sp.dep !== "0"
   const prev = previousMonth(year, month)
 
-  // 12개월 트렌드 범위 (선택월 포함, 11개월 전부터)
-  const trendMonths = monthsBack(year, month, 12)
-  const rangeStart = trendMonths[0]
-  const rangeEndExclusive = (() => {
-    const next = month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
-    return next
-  })()
+  // 12개월 트렌드는 임시 비활성 (API 부하 완화). 현재/이전 월 2개월치만 조회.
+  const twoMonths = [prev, { year, month }]
+  const rangeStart = twoMonths[0]
+  const rangeEndExclusive =
+    month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
 
-  // 단일 배치로 12개월치 매출·매치 통계 조회 (기존 12×6=72 쿼리 → 6 쿼리)
   await loadLedger()
   const [revRange, matchRange, heatmap] = await Promise.all([
     dbRevenueByBranchRange(
@@ -105,41 +101,12 @@ export default async function MonthlyDashboardPage({
     progressHeatmap(year, month),
   ])
 
-  // 시트 (Google Sheets) 는 이미 loadLedger 결과가 캐시됨 → 월별 필터만 반복
   const sheetsPerMonth = await Promise.all(
-    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
+    twoMonths.map((m) => monthlyByBranch(m.year, m.month)),
   )
   const ledgerMapByYm = new Map<string, Map<number, MonthlyBranchSummary>>()
-  trendMonths.forEach((m, i) => {
+  twoMonths.forEach((m, i) => {
     ledgerMapByYm.set(`${m.year}-${String(m.month).padStart(2, "0")}`, ledgerMapForMonth(sheetsPerMonth[i]))
-  })
-
-  function branchTotalForMonth(
-    b: Branch,
-    y: number,
-    mo: number,
-  ): ReturnType<typeof branchTotal> {
-    const ym = `${y}-${String(mo).padStart(2, "0")}`
-    const sheet = ledgerMapByYm.get(ym)?.get(b.groupId) ?? emptyMonthly(b, y, mo)
-    const db = getRevenueForMonth(revRange, b.groupId, y, mo)
-    return branchTotal(sheet, db, includeDep)
-  }
-
-  const trend: TrendPoint[] = trendMonths.map((m) => {
-    let revenue = 0
-    let expense = 0
-    let managerCost = 0
-    const rates: number[] = []
-    for (const b of OPEN_BRANCHES) {
-      const t = branchTotalForMonth(b, m.year, m.month)
-      revenue += t.revenue
-      expense += t.expense
-      managerCost += t.managerCost
-      const r = getMatchStatsForMonth(matchRange, b.groupId, m.year, m.month).progressRate
-      if (r !== null) rates.push(r)
-    }
-    const progressRate = rates.length > 0 ? rates.reduce((s, v) => s + v, 0) / rates.length : null
-    return { ...m, revenue, expense: expense + managerCost, progressRate }
   })
 
   const cur = {
@@ -215,9 +182,21 @@ export default async function MonthlyDashboardPage({
     return rates.reduce((s, v) => s + v, 0) / rates.length
   })()
 
-  const prevRev = trend.length >= 2 ? trend[trend.length - 2].revenue : 0
-  const prevExp = trend.length >= 2 ? trend[trend.length - 2].expense : 0
-  const prevProgress = trend.length >= 2 ? trend[trend.length - 2].progressRate : null
+  // 이전 월 합계 (12개월 트렌드가 비활성이므로 prv 에서 직접 계산)
+  const prevBranchTotals = OPEN_BRANCHES.map((b) => {
+    const sheet = prv.ledgerMap.get(b.groupId) ?? emptyMonthly(b, prev.year, prev.month)
+    const db = prv.dbRev.get(b.groupId)!
+    return { total: branchTotal(sheet, db, includeDep), match: prv.matches.get(b.groupId) }
+  })
+  const prevRev = prevBranchTotals.reduce((s, r) => s + r.total.revenue, 0)
+  const prevExp = prevBranchTotals.reduce((s, r) => s + r.total.expense + r.total.managerCost, 0)
+  const prevProgress = (() => {
+    const rates = prevBranchTotals
+      .map((r) => r.match?.progressRate)
+      .filter((v): v is number => v !== null && v !== undefined)
+    if (rates.length === 0) return null
+    return rates.reduce((s, v) => s + v, 0) / rates.length
+  })()
   const revDelta = deltaLabel(totalRev, prevRev)
   const expDelta = deltaLabel(totalExp + totalMgr, prevExp)
   const progressDeltaLabel = (() => {
@@ -331,16 +310,15 @@ export default async function MonthlyDashboardPage({
       </section>
 
       <section>
-        <div className="mb-2 text-xs text-neutral-500">12개월 매출·지출 추이 + 진행률 (전체 합계)</div>
-        <TrendChart data={trend} />
-      </section>
-
-      <section>
         <div className="mb-2 text-xs text-neutral-500">
           요일 × 시간대 진행률 히트맵 ({year}년 {month}월 · 영업 지점 합계)
         </div>
         <ProgressHeatmap cells={heatmap} />
       </section>
+
+      <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-[11px] text-amber-800">
+        12개월 매출·지출 추이 그래프는 Plab API 부하 완화를 위해 임시 비활성 (현재/이전 월만 조회).
+      </div>
     </div>
   )
 }

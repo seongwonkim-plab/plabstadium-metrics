@@ -18,12 +18,11 @@ import {
 } from "@/lib/revenue"
 import { loadBranchInfo, matchStatsByStadium } from "@/lib/branch-detail"
 import { won, wonShort, pct } from "@/lib/format"
-import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
+import { currentYearMonth, previousMonth, yearOptions } from "@/lib/period"
 import { BranchSwitcher } from "./BranchSwitcher"
 import { DepreciationToggle } from "@/app/components/DepreciationToggle"
 import { YearSelector } from "@/app/components/YearSelector"
 import { MonthNumSelector } from "@/app/components/MonthNumSelector"
-import { TrendChart, type TrendPoint } from "@/app/components/TrendChart"
 import { ProgressHeatmap } from "@/app/components/ProgressHeatmap"
 import { progressHeatmapByStadium } from "@/lib/heatmap"
 
@@ -74,52 +73,21 @@ export default async function BranchDetailPage({
   const year = sp.y ? Number(sp.y) : defaultMonth.year
   const month = sp.m ? Number(sp.m) : defaultMonth.month
 
-  // 12개월 트렌드 범위 (선택월 포함, 11개월 전부터)
-  const trendMonths = monthsBack(year, month, 12)
-  const rangeStart = trendMonths[0]
+  // 12개월 트렌드는 임시 비활성 (API 부하 완화). 선택 월 1개월만 조회.
   const rangeEndExclusive =
     month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
 
-  // 배치 조회 (기존 12×3=36 쿼리 → 6 쿼리)
-  const [info, revRange, matchRange, stadiumStats, stadiumHeatmaps] = await Promise.all([
+  const [info, revRange, matchRange, stadiumStats, stadiumHeatmaps, ledgerList] = await Promise.all([
     loadBranchInfo(groupId),
-    dbRevenueByBranchRange(
-      rangeStart.year,
-      rangeStart.month,
-      rangeEndExclusive.year,
-      rangeEndExclusive.month,
-    ),
-    matchStatsByBranchRange(
-      rangeStart.year,
-      rangeStart.month,
-      rangeEndExclusive.year,
-      rangeEndExclusive.month,
-    ),
+    dbRevenueByBranchRange(year, month, rangeEndExclusive.year, rangeEndExclusive.month),
+    matchStatsByBranchRange(year, month, rangeEndExclusive.year, rangeEndExclusive.month),
     matchStatsByStadium(groupId, year, month),
     progressHeatmapByStadium(groupId, year, month),
+    monthlyByBranch(year, month),
   ])
 
-  // 시트: 12개월치 병렬 필터 (내부는 캐시된 배열 filter)
-  const sheetsPerMonth = await Promise.all(
-    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
-  )
-  const sheetByYm = new Map<string, MonthlyBranchSummary | undefined>()
-  trendMonths.forEach((m, i) => {
-    const ym = `${m.year}-${String(m.month).padStart(2, "0")}`
-    sheetByYm.set(ym, sheetsPerMonth[i].find((x) => x.branch.groupId === groupId))
-  })
-
-  const trend: TrendPoint[] = trendMonths.map((m) => {
-    const ym = `${m.year}-${String(m.month).padStart(2, "0")}`
-    const sheet = sheetByYm.get(ym) ?? emptyMonthly(branch, m.year, m.month)
-    const db = getRevenueForMonth(revRange, groupId, m.year, m.month)
-    const t = branchTotal(sheet, db, includeDep)
-    const rate = getMatchStatsForMonth(matchRange, groupId, m.year, m.month).progressRate
-    return { ...m, revenue: t.revenue, expense: t.expenseWithMgr, progressRate: rate }
-  })
-
   const summary: MonthlyBranchSummary =
-    sheetByYm.get(`${year}-${String(month).padStart(2, "0")}`) ??
+    ledgerList.find((s) => s.branch.groupId === groupId) ??
     emptyMonthly(branch, year, month)
   const db: DbRevenue = getRevenueForMonth(revRange, groupId, year, month)
   const match = getMatchStatsForMonth(matchRange, groupId, year, month)
@@ -185,12 +153,9 @@ export default async function BranchDetailPage({
         />
       </section>
 
-      <section>
-        <div className="mb-2 text-xs text-neutral-500">
-          12개월 매출·지출 추이 + 진행률 ({branch.displayName})
-        </div>
-        <TrendChart data={trend} />
-      </section>
+      <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-[11px] text-amber-800">
+        12개월 매출·지출 추이 그래프는 Plab API 부하 완화를 위해 임시 비활성.
+      </div>
 
       <section>
         <div className="mb-2 flex items-baseline justify-between">
