@@ -134,6 +134,100 @@ export async function matchStatsByBranch(
   return fetchMatchStats(from, to, false, false)
 }
 
+// groupId → { "YYYY-MM" → BranchMatchStats }
+export type BranchMatchRange = Map<number, Map<string, BranchMatchStats>>
+
+// 12개월 등 기간 단위 배치 조회. futurePartial=false (월간 규칙) 만 지원.
+// from 은 포함, to 는 배타 (다음 월).
+export async function matchStatsByBranchRange(
+  fromYear: number,
+  fromMonth: number,
+  toYear: number,
+  toMonth: number,
+): Promise<BranchMatchRange> {
+  const result: BranchMatchRange = new Map()
+  const groupIds = OPEN_BRANCHES.map((b) => b.groupId).join(",")
+  const from = `${fromYear}-${String(fromMonth).padStart(2, "0")}-01`
+  const to = `${toYear}-${String(toMonth).padStart(2, "0")}-01`
+
+  function ensure(groupId: number, ym: string): BranchMatchStats {
+    let inner = result.get(groupId)
+    if (!inner) {
+      inner = new Map()
+      result.set(groupId, inner)
+    }
+    let row = inner.get(ym)
+    if (!row) {
+      row = {
+        groupId,
+        setup: 0,
+        release: 0,
+        cancel: 0,
+        progressRate: null,
+        socialRevenue: 0,
+      }
+      inner.set(ym, row)
+    }
+    return row
+  }
+
+  try {
+    const res = await plabQuery<{
+      group_id: number
+      ym: string
+      past_release: number
+      past_cancel: number
+    }>(
+      `SELECT s.group_id,
+              DATE_FORMAT(CONVERT_TZ(m.schedule, '+00:00', '+09:00'), '%Y-%m') AS ym,
+              SUM(CASE WHEN m.status = 'RELEASE'
+                        AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') < CONVERT_TZ(NOW(), '+00:00', '+09:00')
+                       THEN 1 ELSE 0 END) AS past_release,
+              SUM(CASE WHEN m.status = 'CANCEL'
+                        AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') < CONVERT_TZ(NOW(), '+00:00', '+09:00')
+                       THEN 1 ELSE 0 END) AS past_cancel
+       FROM \`match\` m
+       JOIN stadium s ON s.id = m.stadium_id
+       WHERE s.group_id IN (${groupIds})
+         AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') >= '${from}'
+         AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') < '${to}'
+         AND m.status IN ('RELEASE', 'CANCEL')
+       GROUP BY s.group_id, ym`,
+    )
+    if (res.success) {
+      for (const r of res.data ?? []) {
+        const row = ensure(Number(r.group_id), r.ym)
+        row.release = Number(r.past_release) || 0
+        row.cancel = Number(r.past_cancel) || 0
+        row.setup = row.release + row.cancel
+        row.progressRate = row.setup > 0 ? row.release / row.setup : null
+      }
+    }
+  } catch {
+    // API 오류 시 빈 결과 유지
+  }
+  return result
+}
+
+export function getMatchStatsForMonth(
+  range: BranchMatchRange,
+  groupId: number,
+  year: number,
+  month: number,
+): BranchMatchStats {
+  const ym = `${year}-${String(month).padStart(2, "0")}`
+  return (
+    range.get(groupId)?.get(ym) ?? {
+      groupId,
+      setup: 0,
+      release: 0,
+      cancel: 0,
+      progressRate: null,
+      socialRevenue: 0,
+    }
+  )
+}
+
 export async function matchStatsByWeek(
   startMonday: Date,
   withRevenue = true,

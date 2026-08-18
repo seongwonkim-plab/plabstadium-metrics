@@ -7,8 +7,16 @@ import {
   emptyMonthly,
 } from "@/lib/ledger"
 import { OPEN_BRANCHES, type Branch } from "@/lib/branches"
-import { matchStatsByBranch, type BranchMatchStats } from "@/lib/matches"
-import { dbRevenueByBranch, type DbRevenue } from "@/lib/revenue"
+import {
+  matchStatsByBranchRange,
+  getMatchStatsForMonth,
+  type BranchMatchStats,
+} from "@/lib/matches"
+import {
+  dbRevenueByBranchRange,
+  getRevenueForMonth,
+  type DbRevenue,
+} from "@/lib/revenue"
 import { won, wonShort, pct, deltaLabel } from "@/lib/format"
 import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
 import { YearSelector } from "./components/YearSelector"
@@ -47,45 +55,12 @@ function branchTotal(
   return { revenue, expense, depreciation, managerCost, profit }
 }
 
-async function loadMonthMaps(year: number, month: number) {
-  await loadLedger()
-  const [list, matches, dbRev] = await Promise.all([
-    monthlyByBranch(year, month),
-    matchStatsByBranch(year, month),
-    dbRevenueByBranch(year, month),
-  ])
-  const ledgerMap = new Map<number, MonthlyBranchSummary>()
-  for (const s of list) ledgerMap.set(s.branch.groupId, s)
-  return { ledgerMap, matches, dbRev }
-}
-
-async function loadTwelveMonthTrend(
-  year: number,
-  month: number,
-  includeDep: boolean,
-): Promise<TrendPoint[]> {
-  const months = monthsBack(year, month, 12)
-  return Promise.all(
-    months.map(async (m) => {
-      const { ledgerMap, matches, dbRev } = await loadMonthMaps(m.year, m.month)
-      let revenue = 0
-      let expense = 0
-      let managerCost = 0
-      const rates: number[] = []
-      for (const b of OPEN_BRANCHES) {
-        const sheet = ledgerMap.get(b.groupId) ?? emptyMonthly(b, m.year, m.month)
-        const db = dbRev.get(b.groupId)!
-        const t = branchTotal(sheet, db, includeDep)
-        revenue += t.revenue
-        expense += t.expense
-        managerCost += t.managerCost
-        const r = matches.get(b.groupId)?.progressRate
-        if (r !== null && r !== undefined) rates.push(r)
-      }
-      const progressRate = rates.length > 0 ? rates.reduce((s, v) => s + v, 0) / rates.length : null
-      return { ...m, revenue, expense: expense + managerCost, progressRate }
-    }),
-  )
+function ledgerMapForMonth(
+  list: MonthlyBranchSummary[],
+): Map<number, MonthlyBranchSummary> {
+  const m = new Map<number, MonthlyBranchSummary>()
+  for (const s of list) m.set(s.branch.groupId, s)
+  return m
 }
 
 type SearchParams = Promise<{ y?: string; m?: string; dep?: string }>
@@ -104,12 +79,105 @@ export default async function MonthlyDashboardPage({
   const includeDep = sp.dep !== "0"
   const prev = previousMonth(year, month)
 
-  const [cur, prv, trend, heatmap] = await Promise.all([
-    loadMonthMaps(year, month),
-    loadMonthMaps(prev.year, prev.month),
-    loadTwelveMonthTrend(year, month, includeDep),
+  // 12개월 트렌드 범위 (선택월 포함, 11개월 전부터)
+  const trendMonths = monthsBack(year, month, 12)
+  const rangeStart = trendMonths[0]
+  const rangeEndExclusive = (() => {
+    const next = month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
+    return next
+  })()
+
+  // 단일 배치로 12개월치 매출·매치 통계 조회 (기존 12×6=72 쿼리 → 6 쿼리)
+  await loadLedger()
+  const [revRange, matchRange, heatmap] = await Promise.all([
+    dbRevenueByBranchRange(
+      rangeStart.year,
+      rangeStart.month,
+      rangeEndExclusive.year,
+      rangeEndExclusive.month,
+    ),
+    matchStatsByBranchRange(
+      rangeStart.year,
+      rangeStart.month,
+      rangeEndExclusive.year,
+      rangeEndExclusive.month,
+    ),
     progressHeatmap(year, month),
   ])
+
+  // 시트 (Google Sheets) 는 이미 loadLedger 결과가 캐시됨 → 월별 필터만 반복
+  const sheetsPerMonth = await Promise.all(
+    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
+  )
+  const ledgerMapByYm = new Map<string, Map<number, MonthlyBranchSummary>>()
+  trendMonths.forEach((m, i) => {
+    ledgerMapByYm.set(`${m.year}-${String(m.month).padStart(2, "0")}`, ledgerMapForMonth(sheetsPerMonth[i]))
+  })
+
+  function branchTotalForMonth(
+    b: Branch,
+    y: number,
+    mo: number,
+  ): ReturnType<typeof branchTotal> {
+    const ym = `${y}-${String(mo).padStart(2, "0")}`
+    const sheet = ledgerMapByYm.get(ym)?.get(b.groupId) ?? emptyMonthly(b, y, mo)
+    const db = getRevenueForMonth(revRange, b.groupId, y, mo)
+    return branchTotal(sheet, db, includeDep)
+  }
+
+  const trend: TrendPoint[] = trendMonths.map((m) => {
+    let revenue = 0
+    let expense = 0
+    let managerCost = 0
+    const rates: number[] = []
+    for (const b of OPEN_BRANCHES) {
+      const t = branchTotalForMonth(b, m.year, m.month)
+      revenue += t.revenue
+      expense += t.expense
+      managerCost += t.managerCost
+      const r = getMatchStatsForMonth(matchRange, b.groupId, m.year, m.month).progressRate
+      if (r !== null) rates.push(r)
+    }
+    const progressRate = rates.length > 0 ? rates.reduce((s, v) => s + v, 0) / rates.length : null
+    return { ...m, revenue, expense: expense + managerCost, progressRate }
+  })
+
+  const cur = {
+    ledgerMap:
+      ledgerMapByYm.get(`${year}-${String(month).padStart(2, "0")}`) ??
+      new Map<number, MonthlyBranchSummary>(),
+    matches: new Map(
+      OPEN_BRANCHES.map((b) => [
+        b.groupId,
+        getMatchStatsForMonth(matchRange, b.groupId, year, month),
+      ]),
+    ),
+    dbRev: new Map(
+      OPEN_BRANCHES.map((b) => [
+        b.groupId,
+        getRevenueForMonth(revRange, b.groupId, year, month),
+      ]),
+    ),
+  }
+  // 이전 월이 트렌드 범위 안에 없을 수도 있으므로 (선택월이 최소값 근처면 없음) 안전하게 처리
+  const prevYm = `${prev.year}-${String(prev.month).padStart(2, "0")}`
+  const prv = {
+    ledgerMap:
+      ledgerMapByYm.get(prevYm) ??
+      ledgerMapForMonth(await monthlyByBranch(prev.year, prev.month)),
+    matches: new Map(
+      OPEN_BRANCHES.map((b) => [
+        b.groupId,
+        getMatchStatsForMonth(matchRange, b.groupId, prev.year, prev.month),
+      ]),
+    ),
+    dbRev: new Map(
+      OPEN_BRANCHES.map((b) => [
+        b.groupId,
+        getRevenueForMonth(revRange, b.groupId, prev.year, prev.month),
+      ]),
+    ),
+  }
 
   const rows: {
     branch: Branch

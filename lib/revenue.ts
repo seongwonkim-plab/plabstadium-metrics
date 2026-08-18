@@ -23,6 +23,198 @@ function emptyRow(groupId: number): DbRevenue {
   }
 }
 
+export function ymKey(year: number, month: number): string {
+  return `${year}-${String(month).padStart(2, "0")}`
+}
+
+// groupId → { "YYYY-MM" → DbRevenue }
+export type BranchRevenueRange = Map<number, Map<string, DbRevenue>>
+
+// 12개월 등 기간 단위로 한 번에 5개 쿼리만 (기존 5×N 방식 대비 대폭 감소).
+// from 은 포함, to 는 배타 (다음 월).
+export async function dbRevenueByBranchRange(
+  fromYear: number,
+  fromMonth: number,
+  toYear: number,
+  toMonth: number,
+): Promise<BranchRevenueRange> {
+  const result: BranchRevenueRange = new Map()
+  const groupIds = OPEN_BRANCHES.map((b) => b.groupId).join(",")
+  const from = `${fromYear}-${String(fromMonth).padStart(2, "0")}-01`
+  const to = `${toYear}-${String(toMonth).padStart(2, "0")}-01`
+  const fromYm = fromYear * 100 + fromMonth
+  const toYm = toYear * 100 + toMonth
+
+  function ensure(groupId: number, ym: string): DbRevenue {
+    let inner = result.get(groupId)
+    if (!inner) {
+      inner = new Map()
+      result.set(groupId, inner)
+    }
+    let row = inner.get(ym)
+    if (!row) {
+      row = emptyRow(groupId)
+      inner.set(ym, row)
+    }
+    return row
+  }
+
+  try {
+    const [socialRes, socialOldRes, rentalRes, mgrRes, mgrEstRes] = await Promise.all([
+      // 신규 매출 경로
+      plabQuery<{ group_id: number; ym: string; net: number }>(
+        `SELECT s.group_id,
+                DATE_FORMAT(CONVERT_TZ(m.schedule,'+00:00','+09:00'), '%Y-%m') AS ym,
+                COALESCE(SUM(
+                  CASE
+                    WHEN ch.cash_type IN ('SOCIAL', 'MATCH_PURCHASE') THEN -ch.cash
+                    WHEN ch.cash_type = 'REFUND_CASH'
+                         AND (ch.action IS NULL OR ch.action = 'CANCEL') THEN -ch.cash
+                    WHEN ch.cash_type LIKE 'MATCH_CANCEL_%' THEN -ch.cash
+                    ELSE 0
+                  END
+                ), 0) AS net
+         FROM cash_history ch
+         JOIN \`order\` o ON o.id = ch.order_id
+         JOIN match_apply ma ON ma.id = o.match_apply_id
+         JOIN \`match\` m ON m.id = ma.match_id
+         JOIN stadium s ON s.id = m.stadium_id
+         WHERE s.group_id IN (${groupIds})
+           AND m.status = 'RELEASE'
+           AND ma.apply_type = 'CASH'
+           AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') >= '${from}'
+           AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') < '${to}'
+         GROUP BY s.group_id, ym`,
+      ),
+      // 옛날 매출 경로 (order_id NULL 필터로 배타)
+      plabQuery<{ group_id: number; ym: string; net: number }>(
+        `SELECT s.group_id,
+                DATE_FORMAT(CONVERT_TZ(m.schedule,'+00:00','+09:00'), '%Y-%m') AS ym,
+                COALESCE(SUM(
+                  CASE
+                    WHEN ch.cash_type IN ('SOCIAL', 'MATCH_PURCHASE') THEN -ch.cash
+                    WHEN ch.cash_type = 'REFUND_CASH'
+                         AND (ch.action IS NULL OR ch.action = 'CANCEL') THEN -ch.cash
+                    WHEN ch.cash_type LIKE 'MATCH_CANCEL_%' THEN -ch.cash
+                    ELSE 0
+                  END
+                ), 0) AS net
+         FROM cash_history ch
+         JOIN match_apply ma ON ma.id = ch.match_apply_id
+         JOIN \`match\` m ON m.id = ma.match_id
+         JOIN stadium s ON s.id = m.stadium_id
+         WHERE s.group_id IN (${groupIds})
+           AND ch.match_apply_id IS NOT NULL
+           AND ch.order_id IS NULL
+           AND m.status = 'RELEASE'
+           AND ma.apply_type = 'CASH'
+           AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') >= '${from}'
+           AND CONVERT_TZ(m.schedule, '+00:00', '+09:00') < '${to}'
+         GROUP BY s.group_id, ym`,
+      ),
+      // 대관 매출
+      plabQuery<{ stadium_group_id: number; ym: string; gross: number }>(
+        `SELECT s.group_id AS stadium_group_id,
+                DATE_FORMAT(sp.date, '%Y-%m') AS ym,
+                COALESCE(SUM(sp.product_price), 0) AS gross
+         FROM stadium_product sp
+         JOIN stadium s ON s.id = sp.stadium_id
+         WHERE s.group_id IN (${groupIds})
+           AND sp.product_type = 'RENTAL'
+           AND sp.product_status = 'SOLDOUT'
+           AND sp.date >= '${from}' AND sp.date < '${to}'
+         GROUP BY s.group_id, ym`,
+      ),
+      // 매니저 실지급 (manager_settlement 는 year/month 컬럼)
+      plabQuery<{ group_id: number; ym: string; total: number; cnt: number }>(
+        `SELECT s.group_id,
+                CONCAT(ms.year, '-', LPAD(ms.month, 2, '0')) AS ym,
+                COALESCE(SUM(ms.settlement_amount), 0) AS total,
+                COUNT(*) AS cnt
+         FROM manager_settlement ms
+         JOIN \`match\` m ON m.id = ms.match_id
+         JOIN stadium s ON s.id = m.stadium_id
+         WHERE s.group_id IN (${groupIds})
+           AND (ms.year * 100 + ms.month) >= ${fromYm}
+           AND (ms.year * 100 + ms.month) < ${toYm}
+           AND m.status = 'RELEASE'
+         GROUP BY s.group_id, ym`,
+      ),
+      // 매니저 기본가 추정 (폴백)
+      plabQuery<{ group_id: number; ym: string; est: number; cnt: number }>(
+        `SELECT s.group_id,
+                DATE_FORMAT(CONVERT_TZ(m.schedule,'+00:00','+09:00'), '%Y-%m') AS ym,
+                COALESCE(SUM(mtp.price), 0) AS est,
+                COUNT(*) AS cnt
+         FROM \`match\` m
+         JOIN stadium s ON s.id = m.stadium_id
+         JOIN match_type_pay mtp ON mtp.id = m.match_type_id
+         WHERE s.group_id IN (${groupIds})
+           AND m.status = 'RELEASE'
+           AND CONVERT_TZ(m.schedule,'+00:00','+09:00') >= '${from}'
+           AND CONVERT_TZ(m.schedule,'+00:00','+09:00') < '${to}'
+         GROUP BY s.group_id, ym`,
+      ),
+    ])
+
+    if (socialRes.success) {
+      for (const r of socialRes.data ?? []) {
+        ensure(Number(r.group_id), r.ym).socialRevenue += Number(r.net) || 0
+      }
+    }
+    if (socialOldRes.success) {
+      for (const r of socialOldRes.data ?? []) {
+        ensure(Number(r.group_id), r.ym).socialRevenue += Number(r.net) || 0
+      }
+    }
+    if (rentalRes.success) {
+      for (const r of rentalRes.data ?? []) {
+        ensure(Number(r.stadium_group_id), r.ym).rentalRevenue = Number(r.gross) || 0
+      }
+    }
+    if (mgrRes.success) {
+      for (const r of mgrRes.data ?? []) {
+        const row = ensure(Number(r.group_id), r.ym)
+        row.managerCostActual = Number(r.total) || 0
+      }
+    }
+    if (mgrEstRes.success) {
+      for (const r of mgrEstRes.data ?? []) {
+        const row = ensure(Number(r.group_id), r.ym)
+        row.managerCostEstimate = Number(r.est) || 0
+        // 기본 우선순위 계산 (페이지에서 시트값이 있으면 override)
+        if (row.managerCostActual > 0) {
+          row.managerCost = row.managerCostActual
+          row.releaseMatchCount = row.managerCostActual > 0 ? Number(r.cnt) || 0 : 0
+        } else {
+          row.managerCost = row.managerCostEstimate
+          row.releaseMatchCount = Number(r.cnt) || 0
+        }
+      }
+    }
+    // mgrRes 만 있고 mgrEstRes 는 없는 경우도 처리 (거의 없지만)
+    for (const inner of result.values()) {
+      for (const row of inner.values()) {
+        if (row.managerCost === 0 && row.managerCostActual > 0) {
+          row.managerCost = row.managerCostActual
+        }
+      }
+    }
+  } catch {
+    // API 오류 시 빈 결과 유지
+  }
+  return result
+}
+
+export function getRevenueForMonth(
+  range: BranchRevenueRange,
+  groupId: number,
+  year: number,
+  month: number,
+): DbRevenue {
+  return range.get(groupId)?.get(ymKey(year, month)) ?? emptyRow(groupId)
+}
+
 export async function dbRevenueByBranch(
   year: number,
   month: number,

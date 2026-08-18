@@ -7,8 +7,15 @@ import {
   emptyMonthly,
   type MonthlyBranchSummary,
 } from "@/lib/ledger"
-import { matchStatsByBranch } from "@/lib/matches"
-import { dbRevenueByBranch, type DbRevenue } from "@/lib/revenue"
+import {
+  matchStatsByBranchRange,
+  getMatchStatsForMonth,
+} from "@/lib/matches"
+import {
+  dbRevenueByBranchRange,
+  getRevenueForMonth,
+  type DbRevenue,
+} from "@/lib/revenue"
 import { loadBranchInfo, matchStatsByStadium } from "@/lib/branch-detail"
 import { won, wonShort, pct } from "@/lib/format"
 import { currentYearMonth, previousMonth, monthsBack, yearOptions } from "@/lib/period"
@@ -49,25 +56,6 @@ function branchTotal(sheet: MonthlyBranchSummary, db: DbRevenue, includeDep: boo
   }
 }
 
-async function loadBranchMonthTrend(
-  groupId: number,
-  year: number,
-  month: number,
-  includeDep: boolean,
-): Promise<Omit<TrendPoint, "year" | "month">> {
-  const [list, dbRev, matches] = await Promise.all([
-    monthlyByBranch(year, month),
-    dbRevenueByBranch(year, month),
-    matchStatsByBranch(year, month),
-  ])
-  const sheet = list.find((x) => x.branch.groupId === groupId)
-  const db = dbRev.get(groupId)
-  if (!sheet || !db) return { revenue: 0, expense: 0, progressRate: null }
-  const t = branchTotal(sheet, db, includeDep)
-  const rate = matches.get(groupId)?.progressRate ?? null
-  return { revenue: t.revenue, expense: t.expenseWithMgr, progressRate: rate }
-}
-
 export default async function BranchDetailPage({
   params,
   searchParams,
@@ -86,26 +74,55 @@ export default async function BranchDetailPage({
   const year = sp.y ? Number(sp.y) : defaultMonth.year
   const month = sp.m ? Number(sp.m) : defaultMonth.month
 
-  const [info, ledgerList, matches, dbRev, stadiumStats, trend, stadiumHeatmaps] = await Promise.all([
+  // 12개월 트렌드 범위 (선택월 포함, 11개월 전부터)
+  const trendMonths = monthsBack(year, month, 12)
+  const rangeStart = trendMonths[0]
+  const rangeEndExclusive =
+    month === 12 ? { year: year + 1, month: 1 } : { year, month: month + 1 }
+
+  // 배치 조회 (기존 12×3=36 쿼리 → 6 쿼리)
+  const [info, revRange, matchRange, stadiumStats, stadiumHeatmaps] = await Promise.all([
     loadBranchInfo(groupId),
-    monthlyByBranch(year, month),
-    matchStatsByBranch(year, month),
-    dbRevenueByBranch(year, month),
-    matchStatsByStadium(groupId, year, month),
-    Promise.all(
-      monthsBack(year, month, 12).map(async (m): Promise<TrendPoint> => {
-        const t = await loadBranchMonthTrend(groupId, m.year, m.month, includeDep)
-        return { ...m, ...t }
-      }),
+    dbRevenueByBranchRange(
+      rangeStart.year,
+      rangeStart.month,
+      rangeEndExclusive.year,
+      rangeEndExclusive.month,
     ),
+    matchStatsByBranchRange(
+      rangeStart.year,
+      rangeStart.month,
+      rangeEndExclusive.year,
+      rangeEndExclusive.month,
+    ),
+    matchStatsByStadium(groupId, year, month),
     progressHeatmapByStadium(groupId, year, month),
   ])
 
+  // 시트: 12개월치 병렬 필터 (내부는 캐시된 배열 filter)
+  const sheetsPerMonth = await Promise.all(
+    trendMonths.map((m) => monthlyByBranch(m.year, m.month)),
+  )
+  const sheetByYm = new Map<string, MonthlyBranchSummary | undefined>()
+  trendMonths.forEach((m, i) => {
+    const ym = `${m.year}-${String(m.month).padStart(2, "0")}`
+    sheetByYm.set(ym, sheetsPerMonth[i].find((x) => x.branch.groupId === groupId))
+  })
+
+  const trend: TrendPoint[] = trendMonths.map((m) => {
+    const ym = `${m.year}-${String(m.month).padStart(2, "0")}`
+    const sheet = sheetByYm.get(ym) ?? emptyMonthly(branch, m.year, m.month)
+    const db = getRevenueForMonth(revRange, groupId, m.year, m.month)
+    const t = branchTotal(sheet, db, includeDep)
+    const rate = getMatchStatsForMonth(matchRange, groupId, m.year, m.month).progressRate
+    return { ...m, revenue: t.revenue, expense: t.expenseWithMgr, progressRate: rate }
+  })
+
   const summary: MonthlyBranchSummary =
-    ledgerList.find((s) => s.branch.groupId === groupId) ??
+    sheetByYm.get(`${year}-${String(month).padStart(2, "0")}`) ??
     emptyMonthly(branch, year, month)
-  const db = dbRev.get(groupId)!
-  const match = matches.get(groupId)
+  const db: DbRevenue = getRevenueForMonth(revRange, groupId, year, month)
+  const match = getMatchStatsForMonth(matchRange, groupId, year, month)
   const t = branchTotal(summary, db, includeDep)
 
   const openStadiums = info.stadiums.filter((s) => s.isOpen).length

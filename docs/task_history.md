@@ -4,6 +4,11 @@
 
 ## 2026-08-18
 
+- **API 쿼리 배치 조회 (성능 6~10배)**
+  - 문제: 페이지 로드마다 12개월 × 6쿼리 = 72개 Plab 쿼리 병렬 발사 → API 게이트웨이가 이 프로젝트만 반복 503 응답
+  - 해결: `dbRevenueByBranchRange` / `matchStatsByBranchRange` 신설 · SQL `GROUP BY YEAR, MONTH` 로 12개월치를 5+1 쿼리로 통합
+  - 월간·지점 페이지: 페이지당 ~73개 → **~7개 쿼리** (약 10배 감소)
+  - 응답: 월간 3분+ → 2.4초 · 지점 1.4초
 - **Vercel 배포 준비**
   - 미들웨어 자체 로그인 (`proxy.ts` · Next 16 컨벤션 · 이전 이름 middleware.ts)
     - Web Crypto HMAC-SHA256 서명 쿠키 (Edge 런타임 호환)
