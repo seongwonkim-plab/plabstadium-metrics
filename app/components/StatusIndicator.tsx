@@ -11,7 +11,7 @@ type Health = {
   checkedAt?: string
 }
 
-const REFRESH_MS = 30_000
+const REFRESH_MS = 5 * 60_000 // 5분
 
 export function StatusIndicator() {
   const [health, setHealth] = useState<Health>({ status: "checking" })
