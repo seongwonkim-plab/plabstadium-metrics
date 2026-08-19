@@ -29,8 +29,8 @@ export default async function LoginPage({
   })()
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-50 px-4">
-      <div className="w-full max-w-sm space-y-6 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">
+      <div className="w-full max-w-sm space-y-6">
         <div className="text-center">
           <div className="text-base font-semibold">플랩 직영구장 지표</div>
           <div className="mt-1 text-xs text-neutral-500">
