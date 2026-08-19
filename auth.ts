@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
+import { skipCSRFCheck } from "@auth/core"
 
 // Auth.js v5 · Google OAuth · @plabfootball.com 도메인만 허용
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -34,4 +35,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   // Vercel 뒤 프록시 감지 (production 자동이지만 명시)
   trustHost: true,
+  // Vercel 프록시 뒤에서 __Host- 쿠키/CSRF 검증이 실패하는 이슈가 있어서 우회.
+  // (@plabfootball.com 도메인 검증이 signIn 콜백에 있으니 실질 보안은 유지)
+  skipCSRFCheck,
 })
