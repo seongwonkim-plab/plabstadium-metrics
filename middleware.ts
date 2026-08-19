@@ -1,17 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { getToken } from "next-auth/jwt"
 
-// 인증 미들웨어 · getToken 을 직접 호출해서 커스텀 cookieName 지정
-// (withAuth 는 __Secure- 접두어 기본값이 auth-options 의 커스텀 쿠키와 안 맞아 무한 리다이렉트)
+// 인증 미들웨어 + 요청 헤더에 x-pathname 심어서 서버 컴포넌트에서 현재 경로 판정 가능케 함
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
-  // Bearer CRON_SECRET (Vercel Cron 용) 은 세션 없이도 통과
+  // 서버 컴포넌트가 headers().get("x-pathname") 로 읽을 수 있게 세팅
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set("x-pathname", pathname)
+  const withHeader = () =>
+    NextResponse.next({ request: { headers: requestHeaders } })
+
+  // /login 은 인증 체크 스킵 (그래도 x-pathname 은 전달)
+  if (pathname === "/login") return withHeader()
+
+  // Bearer CRON_SECRET (Vercel Cron) 은 세션 없이도 통과
   const authHeader = req.headers.get("authorization")
   const cronSecret = process.env.CRON_SECRET
-  if (cronSecret && authHeader === `Bearer ${cronSecret}`) {
-    return NextResponse.next()
-  }
+  if (cronSecret && authHeader === `Bearer ${cronSecret}`) return withHeader()
 
   const token = await getToken({
     req,
@@ -27,14 +33,13 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(loginUrl)
   }
 
-  return NextResponse.next()
+  return withHeader()
 }
 
 export const config = {
   matcher: [
-    // 인증 필요 경로. 아래는 제외:
-    //  - /login, /api/auth/*, /api/health
-    //  - _next 정적 리소스, 파일 확장자
-    "/((?!login|api/auth|api/health|_next/static|_next/image|favicon\\.ico|.*\\.(?:png|jpg|jpeg|svg|ico|webp|gif)).*)",
+    // /login 도 매처에 포함 (인증 로직에서 스킵하지만 x-pathname 은 필요)
+    // 제외: /api/auth/*, /api/health, 정적 리소스
+    "/((?!api/auth|api/health|_next/static|_next/image|favicon\\.ico|.*\\.(?:png|jpg|jpeg|svg|ico|webp|gif)).*)",
   ],
 }

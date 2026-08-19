@@ -6,10 +6,10 @@ import { LogoutButton } from "./LogoutButton"
 import { headers } from "next/headers"
 
 export async function AppShell({ children }: { children: React.ReactNode }) {
-  // /login 은 사이드바 없는 단독 화면 (next-url 헤더로 판정)
+  // /login 은 사이드바 없는 단독 화면 (미들웨어가 x-pathname 헤더 심음)
   const h = await headers()
-  const nextUrl = h.get("next-url") ?? ""
-  if (nextUrl === "/login" || nextUrl.startsWith("/login?")) {
+  const pathname = h.get("x-pathname") ?? ""
+  if (pathname === "/login") {
     return <>{children}</>
   }
 
