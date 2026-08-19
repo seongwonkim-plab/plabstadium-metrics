@@ -36,4 +36,45 @@ export const authOptions: NextAuthOptions = {
     error: "/login",
   },
   session: { strategy: "jwt" },
+  // Vercel 프록시 뒤에서 __Secure- 접두어 쿠키가 안정적이지 않음 (state·pkce 소실).
+  // 접두어 제거하되 secure:true 유지 (HTTPS 전용이므로 실질 보안 동일).
+  useSecureCookies: false,
+  cookies: {
+    sessionToken: {
+      name: "next-auth.session-token",
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: true },
+    },
+    callbackUrl: {
+      name: "next-auth.callback-url",
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: true },
+    },
+    csrfToken: {
+      name: "next-auth.csrf-token",
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: true },
+    },
+    pkceCodeVerifier: {
+      name: "next-auth.pkce.code_verifier",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: true,
+        maxAge: 900,
+      },
+    },
+    state: {
+      name: "next-auth.state",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: true,
+        maxAge: 900,
+      },
+    },
+    nonce: {
+      name: "next-auth.nonce",
+      options: { httpOnly: true, sameSite: "lax", path: "/", secure: true },
+    },
+  },
 }
