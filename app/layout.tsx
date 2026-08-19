@@ -17,7 +17,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className="h-full antialiased">
+    <html lang="ko" className="h-full antialiased bg-white">
       <head>
         {/* Pretendard 폰트를 preload 로 우선 요청 + 로딩 완료 후 stylesheet 로 승격.
             FOUT (텍스트 깜빡임/흐릿함) 방지. */}
